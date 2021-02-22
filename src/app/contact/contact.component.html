@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button style="color: white"></ion-menu-button>
     </ion-buttons>
-    <ion-title> Prototype Management </ion-title>
+    <ion-title> Prototype Management</ion-title>
     
   </ion-toolbar>
 </ion-header>
@@ -54,7 +54,13 @@
     ></ion-input>
   </div>
   <br>
-  <ion-button type="submit" color="primary">Submit</ion-button>
+  <!-- <ion-button type="submit" color="primary">{{ editMode?'Update Prototype':'Submit'}}</ion-button> -->
+  <ion-button type="submit" *ngIf='!isEditMode' color="primary">Submit</ion-button>
+  <br>
+  <ion-button type="button" *ngIf='isEditMode' color="primary" value="update" (click)="updatePrototypeManagement(myReactiveForm)">Update</ion-button>
+
+  <br>
+  
 </form>
 
 <h4>&nbsp;&nbsp;&nbsp;Prototype List</h4>
@@ -81,11 +87,14 @@
 </ion-item-sliding> -->
 
 
+
 <ion-item-sliding id="item100" *ngFor="let item of list">
   <ion-item >
     <ion-row>
       <ion-col>{{ item.name }}</ion-col>
       <ion-col>{{ item.designs_count }}</ion-col>
+      <!-- <ion-button type="button" *ngIf='isEditMode' color="primary" value="update" (click)="updatePrototypeManagement(myReactiveForm,item._id)">Update</ion-button> -->
+
     </ion-row>
     <br />
     <ion-row>
@@ -93,10 +102,10 @@
     </ion-row>
   </ion-item>
   <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="editInventory(inventory)">
+    <ion-item-option color="warning" (click)="editPrototypeManagement(item)">
       <ion-icon slot="icon-only" name="create"></ion-icon>
     </ion-item-option>
-    <ion-item-option color="danger" (click)="deleteInventory(inventory._id)">
+    <ion-item-option color="danger" (click)="deletePrototypeManagement(item._id)">
       <ion-icon slot="icon-only" name="trash"></ion-icon>
     </ion-item-option>
   </ion-item-options>

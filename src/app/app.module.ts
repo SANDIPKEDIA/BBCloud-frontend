@@ -33,7 +33,7 @@ import { UsersService } from './users.service';
 
 const appRoutes:Routes=[
   {path:'first',component:FirstComponent},
-  {path:'contact',component:ContactComponent}
+  {path:'prototype',component:ContactComponent}
 ]
 
 @NgModule({

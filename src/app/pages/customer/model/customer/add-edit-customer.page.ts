@@ -81,6 +81,7 @@ export class AddEditCustomerPageModel implements OnInit {
       this.myReactiveForm.reset();
       this.isShow = false;
       this.closeModal();
+      this.presentToast("Customer Updated");
     });
   }
 }

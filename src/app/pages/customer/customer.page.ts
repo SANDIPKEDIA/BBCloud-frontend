@@ -53,7 +53,7 @@ export class CustomerPage implements OnInit {
     console.log(this.myReactiveForm);
     this.user.saveCustomer(this.myReactiveForm.value).subscribe((data) => {
       this.myReactiveForm.reset();
-      this.presentToast("Prototype added");
+      // this.presentToast("Customer added");
       this.getCustomer();
     });
   }
@@ -85,13 +85,14 @@ export class CustomerPage implements OnInit {
     this.myReactiveForm.get('id').setValue(data._id);
   }
 
-  updatePrototypeManagement(body) {
+  updateCustomerManagement(body) {
     //get value from form
     let id = this.myReactiveForm.get("id").value;
 
-    this.user.editPrototype(body.value, id).subscribe((data) => {
+    this.user.editCustomer(body.value, id).subscribe((data) => {
       this.myReactiveForm.reset();
       this.isShow = false;
+      // this.presentToast("Customer Updated");
       this.getCustomer();
     });
   }
@@ -104,6 +105,7 @@ export class CustomerPage implements OnInit {
       buttons: [
         {
           text: 'Cancel',
+
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {

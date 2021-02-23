@@ -31,6 +31,29 @@ export class UsersService {
     let url="//localhost:4000/api/v1/editprototype/"+id
     return this.http.put(url,body);
   }
+  getCus()
+  {
+    let url="//localhost:4000/api/v1/getallcusmanage"
+    return this.http.get(url);
+  }
+
+  saveCustomer(body)
+  {
+    let url="//localhost:4000/api/v1/createcusmanage"
+    return this.http.post(url,body);
+  }
+
+  deleteCustomer(id)
+  {
+    let url="//localhost:4000/api/v1/deletecusmanage/"+id
+    return this.http.delete(url);
+  }
+
+  editCustomer(body,id)
+  {
+    let url="//localhost:4000/api/v1/editcusmanage/"+id
+    return this.http.put(url,body);
+  }
 
 
 }

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-
   {
     path: '',
     redirectTo: 'finance',
@@ -97,6 +96,10 @@ const routes: Routes = [
   {
     path:'prototype',
     loadChildren: () => import('./pages/prototype/prototype.module').then( m => m.PrototypePageModule)
+  },
+  {
+    path:'customer',
+    loadChildren: () => import('./pages/customer/customer.module').then( m =>m.CustomerPageModule)
   }
 
 

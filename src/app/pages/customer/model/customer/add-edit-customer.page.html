@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/customer"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Customer</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Customer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="name"
+        autocomplete="off"
+        formControlName="name"
+        placeholder="Enter Name"
+      ></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        type="Number"
+        class="form-control"
+        id="mobile"
+        autocomplete="off"
+        formControlName="mobile"
+        placeholder="Enter Number"
+      ></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        type="Number"
+        class="form-control"
+        id="age"
+        autocomplete="off"
+        formControlName="age"
+        placeholder="Enter Age"
+      ></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="address"
+        autocomplete="off"
+        formControlName="address"
+        placeholder="Enter Address"
+      ></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="store_name"
+        autocomplete="off"
+        formControlName="store_name"
+        placeholder="Enter Store Name"
+      ></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="package"
+        autocomplete="off"
+        formControlName="package"
+        placeholder="Enter Package"
+      ></ion-input>
+    </div>
+    <br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateCustomerManagement(myReactiveForm)">Update</ion-button>
+    
+  
+    <br>
+    
+  </form>
+</ion-content>

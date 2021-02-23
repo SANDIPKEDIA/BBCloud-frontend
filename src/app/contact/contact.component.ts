@@ -10,7 +10,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class ContactComponent implements OnInit {
   myReactiveForm: FormGroup;
-  isEditMode: boolean =false;
+  isShow: boolean =false;
   editUserId;
   formData;
   list: any;
@@ -43,7 +43,7 @@ export class ContactComponent implements OnInit {
     //   this.updatePrototypeManagement(this.formData,this.editUserId)
     // }
     // else{
-      this.isEditMode = false;
+      this.isShow = false;
     console.log(this.myReactiveForm);  
     this.user.savePrototype(this.myReactiveForm.value).subscribe((data) => {
       this.myReactiveForm.reset();
@@ -85,16 +85,15 @@ export class ContactComponent implements OnInit {
     //   await alert.present();
     // }
     editPrototypeManagement(data){
-      this.isEditMode = true;
+      this.isShow = true;
       this.myReactiveForm.patchValue(data)
     }
 
     updatePrototypeManagement(body,id){
      
-    this.formData = JSON.parse(JSON.stringify(body.value));
-    console.log("formdatataata:  " ,this.formData);
-    // let  id = this.myReactiveForm.get('id').value;
-    this.user.editPrototype(this.formData,id).subscribe((data) => {
+    // this.formData = JSON.parse(JSON.stringify(body.value));
+    // console.log("formdatataata:  " ,this.formData);  
+    this.user.editPrototype(body.value,id).subscribe((data) => {
     console.log("this id is :",id);
       this.getProtoype();
     })

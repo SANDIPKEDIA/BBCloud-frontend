@@ -55,9 +55,8 @@
   </div>
   <br>
   <!-- <ion-button type="submit" color="primary">{{ editMode?'Update Prototype':'Submit'}}</ion-button> -->
-  <ion-button type="submit" *ngIf='!isEditMode' color="primary">Submit</ion-button>
-  <br>
-  <ion-button type="button" *ngIf='isEditMode' color="primary" value="update" (click)="updatePrototypeManagement(myReactiveForm)">Update</ion-button>
+  <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+  <!-- <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updatePrototypeManagement(myReactiveForm)">Update</ion-button> -->
 
   <br>
   
@@ -86,20 +85,22 @@
   <br>
 </ion-item-sliding> -->
 
-
-
-<ion-item-sliding id="item100" *ngFor="let item of list">
+<ion-item-sliding id="item100" *ngFor="let item of list" >
+    
+  
   <ion-item >
     <ion-row>
       <ion-col>{{ item.name }}</ion-col>
-      <ion-col>{{ item.designs_count }}</ion-col>
-      <!-- <ion-button type="button" *ngIf='isEditMode' color="primary" value="update" (click)="updatePrototypeManagement(myReactiveForm,item._id)">Update</ion-button> -->
-
+      <ion-col>{{ item.designs_count }}</ion-col> 
+      <ion-col>{{ item.catagory }}</ion-col> 
     </ion-row>
+  
     <br />
     <ion-row>
       <ion-col style="font-size: 10px">{{ item.description }}</ion-col>
+      <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updatePrototypeManagement(myReactiveForm,item._id)">Update</ion-button>
     </ion-row>
+    
   </ion-item>
   <ion-item-options side="end">
     <ion-item-option color="warning" (click)="editPrototypeManagement(item)">

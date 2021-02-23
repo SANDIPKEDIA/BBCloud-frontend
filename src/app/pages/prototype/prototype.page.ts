@@ -1,14 +1,18 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
-import { ToastController } from "@ionic/angular";
-import { UsersService } from "../users.service";
+import { ModalController, ToastController } from "@ionic/angular";
 import { AlertController } from "@ionic/angular";
+import { UsersService } from "../../users.service";
+import { AddEditPrototypePageModel } from "./model/prototype/add-edit-prototype.page";
+
 @Component({
-  selector: "app-contact",
-  templateUrl: "./contact.component.html",
-  styleUrls: ["./contact.component.scss"],
+  selector: 'app-prototype',
+  templateUrl: './prototype.page.html',
+  styleUrls: ['./prototype.page.scss'],
 })
-export class ContactComponent implements OnInit {
+
+export class PrototypePage implements OnInit {
+
   myReactiveForm: FormGroup;
   isShow: boolean = false;
   editUserId;
@@ -18,7 +22,8 @@ export class ContactComponent implements OnInit {
   constructor(
     private user: UsersService,
     public toastController: ToastController,
-    public alertController: AlertController
+    public alertController: AlertController,
+    public modalController: ModalController,
   ) {}
 
   getProtoype() {
@@ -41,10 +46,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    // if(this.editMode){
-    //   this.updatePrototypeManagement(this.formData,this.editUserId)
-    // }
-    // else{
+    
     this.isShow = false;
     console.log(this.myReactiveForm);
     this.user.savePrototype(this.myReactiveForm.value).subscribe((data) => {
@@ -64,13 +66,10 @@ export class ContactComponent implements OnInit {
   }
 
   deletePrototypeManagement(id) {
-      // if(this.presentAlert('Are you sure to delete?')){
       this.user.deletePrototype(id).subscribe((data) => {
         this.getProtoype();
         this.presentToast("Prototype Deleted");
-        // this.presentAlert('Are you sure to delete?')
       });
-      // }
   }
 
  
@@ -119,4 +118,28 @@ export class ContactComponent implements OnInit {
 
     await alert.present();
   }
+
+  async openAddPrototypeModal() {
+    const modal = await this.modalController.create({
+      component: AddEditPrototypePageModel,
+    });
+    modal.onDidDismiss().then((dataReturned) => {
+      this.getProtoype();
+    });
+    return await modal.present();
+  }
+
+  async openEditPrototypeModal(body) {
+        const modal = await this.modalController.create({
+      component: AddEditPrototypePageModel,
+      componentProps:{
+        data:body
+      }
+    });
+    modal.onDidDismiss().then((dataReturned) => {
+      this.getProtoype();
+    });
+    return await modal.present();
+  }
+  
 }

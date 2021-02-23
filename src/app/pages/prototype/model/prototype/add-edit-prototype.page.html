@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/prototype"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Prototype</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Prototype</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="name"
+        autocomplete="off"
+        formControlName="name"
+        placeholder="Enter Name"
+      ></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="description"
+        autocomplete="off"
+        formControlName="description"
+        placeholder="Enter description"
+      ></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="catagory"
+        autocomplete="off"
+        formControlName="catagory"
+        placeholder="Enter catagory"
+      ></ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input
+        type="number"
+        class="form-control"
+        id="designs_count"
+        autocomplete="off"
+        formControlName="designs_count"
+        placeholder="Enter designs_count"
+      ></ion-input>
+    </div>
+    <br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updatePrototypeManagement(myReactiveForm)">Update</ion-button>
+    
+  
+    <br>
+    
+  </form>
+</ion-content>

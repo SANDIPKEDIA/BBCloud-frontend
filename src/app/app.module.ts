@@ -31,18 +31,13 @@ import { ContactComponent } from './contact/contact.component';
 import { UsersService } from './users.service';
 
 
-const appRoutes:Routes=[
-  {path:'first',component:FirstComponent},
-  {path:'prototype',component:ContactComponent}
-]
-
+ 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
     FormsModule,
       IonicModule.forRoot(),
     IonicStorageModule.forRoot(),

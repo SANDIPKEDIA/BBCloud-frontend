@@ -1,14 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { ToastController } from "@ionic/angular";
-import { UsersService } from "../users.service";
+import { UsersService } from "../../users.service";
 import { AlertController } from "@ionic/angular";
 @Component({
-  selector: "app-contact",
-  templateUrl: "./contact.component.html",
-  styleUrls: ["./contact.component.scss"],
+  selector: "app-add-edit-prototype",
+  templateUrl: "./add-edit-prototype.component.html",
+  styleUrls: ["./add-edit-prototype.component.scss"],
 })
-export class ContactComponent implements OnInit {
+export class AddEditPrototypeComponent implements OnInit {
   myReactiveForm: FormGroup;
   isShow: boolean = false;
   editUserId;

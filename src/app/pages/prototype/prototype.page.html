@@ -1,0 +1,51 @@
+ 
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: white"></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Prototype Management</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+<h4>&nbsp;&nbsp;&nbsp;Prototype List</h4>
+ 
+
+<ion-item-sliding id="item100" *ngFor="let item of list" >
+    
+  
+  <ion-item >
+    <ion-row>
+      <ion-col>{{ item.name }}</ion-col>
+      <ion-col>{{ item.designs_count }}</ion-col> 
+      <ion-col>{{ item.catagory }}</ion-col> 
+    </ion-row>
+  
+    <br />
+    <ion-row>
+      <ion-col style="font-size: 10px">{{ item.description }}</ion-col>
+      
+    </ion-row>
+    
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option color="warning" (click)="openEditPrototypeModal(item)">
+      <ion-icon slot="icon-only" name="create"></ion-icon>
+    </ion-item-option>
+    <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="openAddPrototypeModal()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

@@ -55,5 +55,56 @@ export class UsersService {
     return this.http.put(url,body);
   }
 
+  //employee
+  getEmp()
+  {
+    let url="//localhost:4000/api/v1/GetallEmpDetails"
+    return this.http.get(url);
+  }
+
+  saveEmployee(body)
+  {
+    let url="//localhost:4000/api/v1/CreateEmp"
+    return this.http.post(url,body);
+  }
+
+  deleteEmployee(id)
+  {
+    let url="//localhost:4000/api/v1/deleteemp/"+id
+    return this.http.delete(url);
+  }
+
+  editEmployee(body,id)
+  {
+    let url="//localhost:4000/api/v1/empupdate/"+id
+    return this.http.put(url,body);
+  }
+
+  //task
+
+  getTaskM()
+  {
+    let url="//localhost:4000/api/v1/getalltaskmanagement"
+    return this.http.get(url);
+  }
+
+  saveTask(body)
+  {
+    let url="//localhost:4000/api/v1/createtaskmanagement"
+    return this.http.post(url,body);
+  }
+
+  deleteTask(id)
+  {
+    let url="//localhost:4000/api/v1/deletetaskmanagement/"+id
+    return this.http.delete(url);
+  }
+
+  editTask(body,id)
+  {
+    let url="//localhost:4000/api/v1/edittaskmanagement/"+id
+    return this.http.put(url,body);
+  }
+
 
 }

@@ -100,6 +100,14 @@ const routes: Routes = [
   {
     path:'customer',
     loadChildren: () => import('./pages/customer/customer.module').then( m =>m.CustomerPageModule)
+  },
+  {
+    path:'employee',
+    loadChildren: () => import('./pages/employee/employee.module').then( m =>m.EmployeePageModule)
+  },
+  {
+    path:'task',
+    loadChildren: () => import('./pages/task/task.module').then( m =>m.TaskPageModule)
   }
 
 

@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/task"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Task</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <ion-item>
+      
+          <ion-input
+          type="text"
+          class="form-control"
+          id="task_name"
+          autocomplete="off"
+          formControlName="task_name"
+          placeholder="Enter Task-Name"
+        >
+      
+      </ion-input>
+      </ion-item>
+    </div>
+  
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-label>Start-Date:</ion-label>
+      <ion-input
+        type="date"
+        class="form-control"
+        id="start_date"
+        autocomplete="off"
+        formControlName="start_date"
+        placeholder="Enter Start-Date"
+      ></ion-input>
+      </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-label>End-Date:</ion-label>
+      <ion-input
+        type="date"
+        class="form-control"
+        id="end_date"
+        autocomplete="off"
+        formControlName="end_date"
+        placeholder="Enter End-Date"
+      ></ion-input>
+      </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-textarea
+        class="form-control"
+        id="description"
+        autocomplete="off"
+        formControlName="description"
+        placeholder="Enter Description"
+      ></ion-textarea>
+    </ion-item>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-label>CompletedOn:</ion-label>
+      <ion-input
+        type="date"
+        class="form-control"
+        id="completeOn"
+        autocomplete="off"
+        formControlName="completeOn"
+        placeholder="Enter completedOn"
+      ></ion-input>
+      </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+        <ion-item>
+          <ion-label>Assignee:</ion-label>
+          <ion-select placeholder="Employee id" formControlName="Assignee-Id">
+            <section>
+              <ion-select-option></ion-select-option>
+          </section>
+          </ion-select>
+        </ion-item>
+    </div>
+
+    <br>
+    <!-- <div class="form-group">
+      <ion-item>
+      <ion-input
+        type="text"
+        class="form-control"
+        id="assignee"
+        autocomplete="off"
+        formControlName="assignee"
+        placeholder="Enter Assignee-Id"
+      ></ion-input>
+      </ion-item>
+    </div> -->
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-input
+        type="text"
+        class="form-control"
+        id="LogHours"
+        autocomplete="off"
+        formControlName="LogHours"
+        placeholder="Enter LogHours"
+      ></ion-input>
+      </ion-item>
+    </div>
+    
+    <br>
+    <br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateTaskManagement(myReactiveForm)">Update</ion-button>
+    
+  
+    <br>
+    
+  </form>

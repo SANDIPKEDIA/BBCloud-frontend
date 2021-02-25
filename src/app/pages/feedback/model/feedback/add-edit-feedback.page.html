@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/feedback"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Feedback</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Feedback</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-input
+          type="text"
+          class="form-control"
+          id="project"
+          autocomplete="off"
+          formControlName="project"
+          placeholder="Enter Project"
+        >
+      </ion-input>
+    </div>
+    <br>
+    <div class="form-group">
+     
+      <ion-input
+        type="text"
+        class="form-control"
+        id="feedback"
+        autocomplete="off"
+        formControlName="feedback"
+        placeholder="Enter Feedback"
+      ></ion-input>
+    
+    </div>
+    <br>
+    <div class="form-group">
+      
+      <ion-input
+        type="date"
+        class="form-control"
+        id="date"
+        autocomplete="off"
+        formControlName="date"
+        placeholder="Enter Date"
+      ></ion-input>
+    
+    </div>
+    <br>
+    <div class="form-group">
+   
+      <ion-input
+        type="text"
+        class="form-control"
+        id="submitted_by"
+        autocomplete="off"
+        formControlName="submitted_by"
+        placeholder="Enter Submitted By"
+      ></ion-input>
+
+    </div>
+    <br>
+    <div class="form-group">
+     
+      <ion-input
+        type="text"
+        class="form-control"
+        id="raise_by"
+        autocomplete="off"
+        formControlName="raise_by"
+        placeholder="Enter Raise By"
+      ></ion-input>
+    
+    </div>
+  
+  
+    <br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateFeedback(myReactiveForm)">Update</ion-button>
+    
+  
+    <br>
+    
+  </form>

@@ -15,6 +15,7 @@ export class AddEditTaskPageModel implements OnInit {
   editUserId;
   formData;
   public employeeList=[];
+  public now = new Date();
   data: any;
   // public del: string;
   constructor(
@@ -38,7 +39,7 @@ export class AddEditTaskPageModel implements OnInit {
       start_date: new FormControl(''),
       end_date: new FormControl(''),
       description: new FormControl(''),
-      completeOn: new FormControl(''),
+      completeOn: new FormControl(this.now),
       assignee: new FormControl(''),
       LogHours: new FormControl(''),
       

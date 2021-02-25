@@ -14,6 +14,7 @@ export class AddEditEmployeePageModel implements OnInit {
   isShow: boolean = false;
   editUserId;
   formData;
+  public departmentList=[];
   data: any;
   // public del: string;
   constructor(
@@ -29,6 +30,7 @@ export class AddEditEmployeePageModel implements OnInit {
   }
 
   ngOnInit() {
+    this.getDepartment();
     this.myReactiveForm = new FormGroup({
       id:new FormControl(''),
       name: new FormControl(''),
@@ -81,6 +83,12 @@ export class AddEditEmployeePageModel implements OnInit {
       this.isShow = false;
       this.closeModal();
       this.presentToast("Employee Updated");
+    });
+  }
+  getDepartment() {
+    this.user.getDept().subscribe((result) => {
+      console.log("Department result", result);
+      this.departmentList = result["response"];
     });
   }
 }

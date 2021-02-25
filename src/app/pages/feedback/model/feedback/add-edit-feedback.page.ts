@@ -5,16 +5,16 @@ import { AlertController } from "@ionic/angular";
 import { UsersService } from "../../../../users.service";
 
 @Component({
-  selector: "app-add-edit-customer",
-  templateUrl: "./add-edit-customer.page.html",
-  styleUrls: ["./add-edit-customer.page.scss"],
+  selector: "app-add-edit-feedback",
+  templateUrl: "./add-edit-feedback.page.html",
+  styleUrls: ["./add-edit-feedback.page.scss"],
 })
-export class AddEditCustomerPageModel implements OnInit {
+export class AddEditFeedbackPageModel implements OnInit {
   myReactiveForm: FormGroup;
   isShow: boolean = false;
   editUserId;
   formData;
-  
+  // public employeeList=[];
   data: any;
   // public del: string;
   constructor(
@@ -30,28 +30,38 @@ export class AddEditCustomerPageModel implements OnInit {
   }
 
   ngOnInit() {
+    
+
     this.myReactiveForm = new FormGroup({
       id:new FormControl(''),
-      name: new FormControl(''),
-      mobile: new FormControl(''),
-      age: new FormControl(''),
-      address: new FormControl(''),
-      store_name: new FormControl(''),
-      package: new FormControl(''),
+      project: new FormControl(''),
+      feedback: new FormControl(''),
+      date: new FormControl(''),
+      submitted_by: new FormControl(''),
+      raise_by: new FormControl(''),
+      
+
+    
+
+      
+
     });
 
     
 
     if(this.data){
-      this.editCustomerManagement(this.data);
+      this.editFeedback(this.data);
     }
   }
+  // getFeedback() {
+  //   throw new Error("Method not implemented.");
+  // }
 
   onSubmit() {
     this.isShow = false;
-    this.user.saveCustomer(this.myReactiveForm.value).subscribe((data) => {
+    this.user.saveFeed(this.myReactiveForm.value).subscribe((data) => {
       this.myReactiveForm.reset();
-      this.presentToast("Customer added");
+      this.presentToast("feedback added");
       this.closeModal();
     });
   }
@@ -65,7 +75,7 @@ export class AddEditCustomerPageModel implements OnInit {
     toast.present();
   }
 
-  editCustomerManagement(data) {
+  editFeedback(data) {
     this.isShow = true;
     //automatic set
     this.myReactiveForm.patchValue(data);
@@ -74,18 +84,22 @@ export class AddEditCustomerPageModel implements OnInit {
     this.myReactiveForm.get("id").setValue(data._id);
   }
 
-  updateCustomerManagement(body) {
+  updateFeedback(body) {
     //get value from form
     let id = this.myReactiveForm.get("id").value;
 
-    this.user.editCustomer(body.value, id).subscribe((data) => {
+    this.user.editFeed(body.value, id).subscribe((data) => {
       this.myReactiveForm.reset();
       this.isShow = false;
       this.closeModal();
-      this.presentToast("Customer Updated");
+      this.presentToast("Feedback Updated");
     });
   }
 
-
- 
+  // getEmployee() {
+  //   this.user.getEmp().subscribe((result) => {
+  //     console.log("Employee result", result);
+  //     this.employeeList = result["response"];
+  //   });
+  // }
 }

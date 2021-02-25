@@ -106,5 +106,59 @@ export class UsersService {
     return this.http.put(url,body);
   }
 
+//dept
+
+
+getDept()
+{
+  let url="//localhost:4000/api/v1/getalldept"
+  return this.http.get(url);
+}
+
+saveDept(body)
+{
+  let url="//localhost:4000/api/v1/createdept"
+  return this.http.post(url,body);
+}
+
+deleteDept(id)
+{
+  let url="//localhost:4000/api/v1/deletedept/"+id
+  return this.http.delete(url);
+}
+
+editDept(body,id)
+{
+  let url="//localhost:4000/api/v1/editdept/"+id
+  return this.http.put(url,body);
+}
+
+//feedback
+
+getFeed()
+{
+  let url="//localhost:4000/api/v1/getallfeedmanage"
+  return this.http.get(url);
+}
+
+saveFeed(body)
+{
+  let url="//localhost:4000/api/v1/createfeedmanage"
+  return this.http.post(url,body);
+}
+
+deleteFeed(id)
+{
+  let url="//localhost:4000/api/v1/deletefeedmanage/"+id
+  return this.http.delete(url);
+}
+
+editFeed(body,id)
+{
+  let url="//localhost:4000/api/v1/editfeedmanage/"+id
+  return this.http.put(url,body);
+}
+
+
 
 }

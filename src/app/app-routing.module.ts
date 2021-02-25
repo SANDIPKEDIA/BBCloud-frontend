@@ -108,7 +108,16 @@ const routes: Routes = [
   {
     path:'task',
     loadChildren: () => import('./pages/task/task.module').then( m =>m.TaskPageModule)
+  },
+  {
+    path:'department',
+    loadChildren: () => import('./pages/department/department.module').then( m =>m.DepartmentPageModule)
+  },
+  {
+    path:'feedback',
+    loadChildren: () => import('./pages/feedback/feedback.module').then( m =>m.FeedbackPageModule)
   }
+
 
 
 

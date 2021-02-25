@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button style="color: white"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Employee Management</ion-title>
+    <ion-title>Feedback Management</ion-title>
     
   </ion-toolbar>
 </ion-header>
@@ -13,10 +13,10 @@
 
 
 <!-- <br> -->
-<!-- <h4 >&nbsp;&nbsp;&nbsp;Employee List</h4> -->
+<!-- <h4 >&nbsp;&nbsp;&nbsp;task List</h4> -->
 <ion-list-header color="light">
   <h4>
-  <ion-label>Employee List</ion-label>
+  <ion-label>Feedback List</ion-label>
   </h4>
 </ion-list-header>
 
@@ -33,11 +33,15 @@
       <ion-col>{{ item.store_name }}</ion-col> 
       <ion-col>{{ item.package }}</ion-col>  -->
       <ion-label>
-        <h2 ion-text color="primary">Name: {{item.name}}</h2>
-        <p>Contact: {{item.email}}</p>
-        <p>Age: {{item.age}}</p>
-        <!-- <p>Department-Id: {{item.departmentId}}</p> -->
-        <p>Store Name: {{item.position}}</p>
+        <h2 ion-text color="primary">Project: {{item.project}}</h2>
+        <p>Feedback: {{item.feedback}}</p>
+        <p>Date: {{item.date}}</p>
+        <p>Submitted By: {{item.submitted_by}}</p>
+        <p>Raise By: {{item.raise_by}}</p>
+       
+        
+        
+
        
       </ion-label>
         
@@ -49,7 +53,7 @@
     
   </ion-item>
   <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="openEditEmployeeModal(item)">
+    <ion-item-option color="warning" (click)="openEditFeedbackModal(item)">
       <ion-icon slot="icon-only" name="create"></ion-icon>
     </ion-item-option>
     <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
@@ -59,7 +63,7 @@
 </ion-item-sliding>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="openAddEmployeeModal()">
+  <ion-fab-button (click)="openAddFeedbackModal()">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>

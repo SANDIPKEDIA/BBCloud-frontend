@@ -71,11 +71,11 @@
     </ion-item>
     </div>
     <br>
-    <br>
-    <div class="form-group">
-      <ion-item>
+    <div class="form-group" *ngIf='isShow'>
+      <ion-item >
       <ion-label>CompletedOn:</ion-label>
       <ion-input
+        
         type="date"
         class="form-control"
         id="completeOn"

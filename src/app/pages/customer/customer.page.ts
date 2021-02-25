@@ -17,6 +17,7 @@ export class CustomerPage implements OnInit {
   isShow: boolean = false;
   editUserId;
   formData;
+  public show: boolean = false;
   list: any;
   // public del: string;
   constructor(
@@ -144,6 +145,9 @@ export class CustomerPage implements OnInit {
       this.getCustomer();
     });
     return await modal.present();
+  }
+  displayText() {
+    this.show = !this.show
   }
   
 }

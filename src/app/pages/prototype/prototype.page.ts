@@ -17,6 +17,7 @@ export class PrototypePage implements OnInit {
   isShow: boolean = false;
   editUserId;
   formData;
+  public show: boolean = false;
   list: any;
   // public del: string;
   constructor(
@@ -140,6 +141,9 @@ export class PrototypePage implements OnInit {
       this.getProtoype();
     });
     return await modal.present();
+  }
+  displayText() {
+    this.show = !this.show
   }
   
 }

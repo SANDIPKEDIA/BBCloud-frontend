@@ -14,7 +14,7 @@
 
 <!-- <br> -->
 <!-- <h4 >&nbsp;&nbsp;&nbsp;Customer List</h4> -->
-<ion-list-header color=" light">
+<ion-list-header color="light">
   <h4>
   <ion-label>Customer List</ion-label>
   </h4>
@@ -46,6 +46,13 @@
       <!-- <ion-col style="font-size: 10px">{{ item.description }}</ion-col> -->
       
     <!-- </ion-row> -->
+
+    <div name="main" style="position:relative;display:grid;">
+      <p [class]="show?'showText':'hideText'">{{ item.name}}</p>
+      <div [class]="show?'showReadMore':'showReadLess'" (click)="displayText()">
+        {{show?'Less details':'More details'}}
+     </div>
+    </div> 
     
   </ion-item>
   <ion-item-options side="end">

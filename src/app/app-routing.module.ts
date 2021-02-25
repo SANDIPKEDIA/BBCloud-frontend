@@ -116,6 +116,14 @@ const routes: Routes = [
   {
     path:'feedback',
     loadChildren: () => import('./pages/feedback/feedback.module').then( m =>m.FeedbackPageModule)
+  },
+  {
+    path:'customertouchpoint',
+    loadChildren: () => import('./pages/customertouchpoint/customertouchpoint.module').then( m =>m.CustomertouchpointPageModule)
+  },
+  {
+    path:'organisation',
+    loadChildren: () => import('./pages/organisation/organisation.module').then( m =>m.OrganisationPageModule)
   }
 
 

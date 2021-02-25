@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button style="color: white"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Customer Management</ion-title>
+    <ion-title>CustomerTouchPoint</ion-title>
     
   </ion-toolbar>
 </ion-header>
@@ -16,7 +16,7 @@
 <!-- <h4 >&nbsp;&nbsp;&nbsp;Customer List</h4> -->
 <ion-list-header color="light">
   <h4>
-  <ion-label>Customer List</ion-label>
+  <ion-label>CustomerTouchPoint List</ion-label>
   </h4>
 </ion-list-header>
 
@@ -33,12 +33,12 @@
       <ion-col>{{ item.store_name }}</ion-col> 
       <ion-col>{{ item.package }}</ion-col>  -->
       <ion-label>
-        <h2 ion-text color="primary">Name: {{item.name}}</h2>
-        <p>Contact: {{item.mobile}}</p>
-        <p>Age: {{item.age}}</p>
-        <p>Address: {{item.address}}</p>
-        <p>Store Name: {{item.store_name}}</p>
-        <p>Package: {{item.package}}</p>
+        <h2 ion-text color="primary">Title : {{item.title}}</h2>
+        <p>Project : {{item.project}}</p>
+        <p>Description : {{item.description}}</p>
+        <p>Date : {{item.date}}</p>
+        <p>Benifit : {{item.benifit}}</p>
+        
       </ion-label>
         
     <!-- </ion-row> -->
@@ -56,7 +56,7 @@
     
   </ion-item>
   <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="openEditCustomerModal(item)">
+    <ion-item-option color="warning" (click)="openEditCustomertouchpointModal(item)">
       <ion-icon slot="icon-only" name="create"></ion-icon>
     </ion-item-option>
     <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
@@ -66,7 +66,7 @@
 </ion-item-sliding>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="openAddCustomerModal()">
+  <ion-fab-button (click)="openAddCustomertouchpointModal()">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>

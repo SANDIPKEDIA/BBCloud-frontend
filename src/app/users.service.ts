@@ -158,7 +158,60 @@ editFeed(body,id)
   let url="//localhost:4000/api/v1/editfeedmanage/"+id
   return this.http.put(url,body);
 }
+//customertouchpoint
 
+getCusT()
+{
+  let url="//localhost:4000/api/v1/getallcus"
+  return this.http.get(url);
+}
+
+saveCus(body)
+{
+  let url="//localhost:4000/api/v1/CreateCus"
+  return this.http.post(url,body);
+}
+
+deleteCus(id)
+{
+  let url="//localhost:4000/api/v1/deletecus/"+id
+  return this.http.delete(url);
+}
+
+editCus(body,id)
+{
+  let url="//localhost:4000/api/v1/editcus/"+id
+  return this.http.put(url,body);
+}
+
+
+//organisation
+
+
+
+getOrg()
+{
+  let url="//localhost:4000/api/v1/getallorg"
+  return this.http.get(url);
+}
+
+saveOrg(body)
+{
+  let url="//localhost:4000/api/v1/createorg"
+  return this.http.post(url,body);
+}
+
+deleteOrg(id)
+{
+  let url="//localhost:4000/api/v1/deleteorg/"+id
+  return this.http.delete(url);
+}
+
+editOrg(body,id)
+{
+  let url="//localhost:4000/api/v1/editorg/"+id
+  return this.http.put(url,body);
+}
 
 
 }

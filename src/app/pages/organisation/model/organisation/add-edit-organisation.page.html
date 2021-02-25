@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/organisation"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Organisation</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Organisation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      
+          <ion-input
+          type="text"
+          class="form-control"
+          id="company_name"
+          autocomplete="off"
+          formControlName="company_name"
+          placeholder="Enter Company Name"
+        >
+      
+      </ion-input>
+    </div>
+  
+    <br>
+    <div class="form-group">
+      <ion-input
+        type="Number"
+        class="form-control"
+        id="employess_count"
+        autocomplete="off"
+        formControlName="employess_count"
+        placeholder="Enter Employess Count"
+      ></ion-input>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="registration_id"
+        autocomplete="off"
+        formControlName="registration_id"
+        placeholder="Enter Registration Id"
+      ></ion-input>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="type"
+        autocomplete="off"
+        formControlName="type"
+        placeholder="Enter Type"
+      ></ion-input>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="category"
+        autocomplete="off"
+        formControlName="category"
+        placeholder="Enter Category"
+      ></ion-input>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-input
+        type="text"
+        class="form-control"
+        id="business_model"
+        autocomplete="off"
+        formControlName="business_model"
+        placeholder="Enter Business Model"
+      ></ion-input>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-textarea
+        class="form-control"
+        id="description"
+        autocomplete="off"
+        formControlName="description"
+        placeholder="Enter Description"
+      ></ion-textarea>
+    </div>
+    <br>
+    <br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateOrganisationManagement(myReactiveForm)">Update</ion-button>
+    
+  
+    <br>
+    
+  </form>

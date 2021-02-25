@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button style="color: white"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Customer Management</ion-title>
+    <ion-title>Organisation Management</ion-title>
     
   </ion-toolbar>
 </ion-header>
@@ -13,10 +13,10 @@
 
 
 <!-- <br> -->
-<!-- <h4 >&nbsp;&nbsp;&nbsp;Customer List</h4> -->
+<!-- <h4 >&nbsp;&nbsp;&nbsp;organisation List</h4> -->
 <ion-list-header color="light">
   <h4>
-  <ion-label>Customer List</ion-label>
+  <ion-label>Organisation List</ion-label>
   </h4>
 </ion-list-header>
 
@@ -33,12 +33,13 @@
       <ion-col>{{ item.store_name }}</ion-col> 
       <ion-col>{{ item.package }}</ion-col>  -->
       <ion-label>
-        <h2 ion-text color="primary">Name: {{item.name}}</h2>
-        <p>Contact: {{item.mobile}}</p>
-        <p>Age: {{item.age}}</p>
-        <p>Address: {{item.address}}</p>
-        <p>Store Name: {{item.store_name}}</p>
-        <p>Package: {{item.package}}</p>
+        <h2 ion-text color="primary">Comapny Name: {{item.company_name}}</h2>
+        <p>Registration Id : {{item.registration_id}}</p>
+        <p>Employee Count : {{item.employess_count}}</p>
+        <p>Type : {{item.type}}</p>
+        <p>Catagory :  {{item.category}}</p>
+        <p>Business Model : {{item.business_model}}</p>
+        <p>Description : {{item.description}}</p>
       </ion-label>
         
     <!-- </ion-row> -->
@@ -56,7 +57,7 @@
     
   </ion-item>
   <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="openEditCustomerModal(item)">
+    <ion-item-option color="warning" (click)="openEditOrganisationModal(item)">
       <ion-icon slot="icon-only" name="create"></ion-icon>
     </ion-item-option>
     <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
@@ -66,7 +67,7 @@
 </ion-item-sliding>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="openAddCustomerModal()">
+  <ion-fab-button (click)="openAddOrganisationModal()">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>

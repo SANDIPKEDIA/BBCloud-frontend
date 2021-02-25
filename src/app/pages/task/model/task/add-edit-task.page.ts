@@ -14,6 +14,7 @@ export class AddEditTaskPageModel implements OnInit {
   isShow: boolean = false;
   editUserId;
   formData;
+  public employeeList=[];
   data: any;
   // public del: string;
   constructor(
@@ -29,6 +30,8 @@ export class AddEditTaskPageModel implements OnInit {
   }
 
   ngOnInit() {
+    this.getEmployee();
+
     this.myReactiveForm = new FormGroup({
       id:new FormControl(''),
       task_name: new FormControl(''),
@@ -87,6 +90,13 @@ export class AddEditTaskPageModel implements OnInit {
       this.isShow = false;
       this.closeModal();
       this.presentToast("Task Updated");
+    });
+  }
+
+  getEmployee() {
+    this.user.getEmp().subscribe((result) => {
+      console.log("Employee result", result);
+      this.employeeList = result["response"];
     });
   }
 }

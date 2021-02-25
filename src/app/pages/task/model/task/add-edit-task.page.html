@@ -89,9 +89,9 @@
     <div class="form-group">
         <ion-item>
           <ion-label>Assignee:</ion-label>
-          <ion-select placeholder="Employee id" formControlName="Assignee-Id">
+          <ion-select  placeholder="Employee id" formControlName="assignee">
             <section>
-              <ion-select-option></ion-select-option>
+              <ion-select-option [value]="list._id" *ngFor="let list of employeeList">{{list.name}}</ion-select-option>
           </section>
           </ion-select>
         </ion-item>

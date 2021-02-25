@@ -35,6 +35,7 @@ export class TaskPage implements OnInit {
 
   ngOnInit() {
     this.getTask();
+    
     this.myReactiveForm = new FormGroup({
       id:new FormControl(''),
       task_name: new FormControl(''),
@@ -147,5 +148,7 @@ export class TaskPage implements OnInit {
     });
     return await modal.present();
   }
+
+ 
   
 }

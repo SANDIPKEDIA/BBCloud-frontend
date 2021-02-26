@@ -45,7 +45,7 @@ export class MarketingPage implements OnInit {
       end_date: new FormControl(''),
       description: new FormControl(''),
       platform: new FormControl(''),
-      resultfileId: new FormControl('602fbb7bbd0880ae1f65b57y'),
+      resultfileId: new FormControl(''),
       benifits_comments: new FormControl(''),
       isOnline: new FormControl(this.isOn),
     });

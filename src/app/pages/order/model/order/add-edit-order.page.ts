@@ -5,16 +5,17 @@ import { AlertController } from "@ionic/angular";
 import { UsersService } from "../../../../users.service";
 
 @Component({
-  selector: "app-add-edit-employee",
-  templateUrl: "./add-edit-employee.page.html",
-  styleUrls: ["./add-edit-employee.page.scss"],
+  selector: "app-add-edit-order",
+  templateUrl: "./add-edit-order.page.html",
+  styleUrls: ["./add-edit-order.page.scss"],
 })
-export class AddEditEmployeePageModel implements OnInit {
+export class AddEditOrderPageModel implements OnInit {
   myReactiveForm: FormGroup;
   isShow: boolean = false;
   editUserId;
+  public prototypeList=[];
   formData;
-  public departmentList=[];
+  
   data: any;
   // public del: string;
   constructor(
@@ -30,28 +31,30 @@ export class AddEditEmployeePageModel implements OnInit {
   }
 
   ngOnInit() {
-    this.getDepartment();
+    this.getProtoype();
     this.myReactiveForm = new FormGroup({
       id:new FormControl(''),
       name: new FormControl(''),
-      email: new FormControl(''),
-      age: new FormControl(''),
-      departmentId: new FormControl(''),
-      position: new FormControl(''),
+      store_name: new FormControl(''),
+      contact: new FormControl(''),
+      prototype_id: new FormControl(''),
+      address: new FormControl(''),
+      date: new FormControl(''),
+      comments: new FormControl(''),
     });
 
     
 
     if(this.data){
-      this.editEmployeeManagement(this.data);
+      this.editOrderManagement(this.data);
     }
   }
 
   onSubmit() {
     this.isShow = false;
-    this.user.saveEmployee(this.myReactiveForm.value).subscribe((data) => {
+    this.user.saveOrder(this.myReactiveForm.value).subscribe((data) => {
       this.myReactiveForm.reset();
-      this.presentToast("Employee added");
+      this.presentToast("Order added");
       this.closeModal();
     });
   }
@@ -65,7 +68,7 @@ export class AddEditEmployeePageModel implements OnInit {
     toast.present();
   }
 
-  editEmployeeManagement(data) {
+  editOrderManagement(data) {
     this.isShow = true;
     //automatic set
     this.myReactiveForm.patchValue(data);
@@ -74,21 +77,24 @@ export class AddEditEmployeePageModel implements OnInit {
     this.myReactiveForm.get("id").setValue(data._id);
   }
 
-  updateEmployeeManagement(body) {
+  updateOrderManagement(body) {
     //get value from form
     let id = this.myReactiveForm.get("id").value;
 
-    this.user.editEmployee(body.value, id).subscribe((data) => {
+    this.user.editOrder(body.value, id).subscribe((data) => {
       this.myReactiveForm.reset();
       this.isShow = false;
       this.closeModal();
-      this.presentToast("Employee Updated");
+      this.presentToast("Order Updated");
     });
   }
-  getDepartment() {
-    this.user.getDept().subscribe((result) => {
-      console.log("Department result", result);
-      this.departmentList = result["response"];
+  getProtoype() {
+    this.user.getData().subscribe((result) => {
+      console.log("Prototype result", result);
+      this.prototypeList = result["response"];
     });
   }
+
+
+ 
 }

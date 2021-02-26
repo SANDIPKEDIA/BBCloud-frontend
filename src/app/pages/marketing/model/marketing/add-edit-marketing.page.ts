@@ -5,16 +5,18 @@ import { AlertController } from "@ionic/angular";
 import { UsersService } from "../../../../users.service";
 
 @Component({
-  selector: "app-add-edit-employee",
-  templateUrl: "./add-edit-employee.page.html",
-  styleUrls: ["./add-edit-employee.page.scss"],
+  selector: "app-add-edit-marketing",
+  templateUrl: "./add-edit-marketing.page.html",
+  styleUrls: ["./add-edit-marketing.page.scss"],
 })
-export class AddEditEmployeePageModel implements OnInit {
+export class AddEditMarketingPageModel implements OnInit {
   myReactiveForm: FormGroup;
   isShow: boolean = false;
+  isOn: boolean;
   editUserId;
+  // public employeeList=[];
   formData;
-  public departmentList=[];
+  
   data: any;
   // public del: string;
   constructor(
@@ -30,28 +32,32 @@ export class AddEditEmployeePageModel implements OnInit {
   }
 
   ngOnInit() {
-    this.getDepartment();
+    // this.getEmployee();
     this.myReactiveForm = new FormGroup({
       id:new FormControl(''),
-      name: new FormControl(''),
-      email: new FormControl(''),
-      age: new FormControl(''),
-      departmentId: new FormControl(''),
-      position: new FormControl(''),
+      advertisement_name: new FormControl(''),
+      start_date: new FormControl(''),
+      end_date: new FormControl(''),
+      description: new FormControl(''),
+      platform: new FormControl(''),
+      resultfileId: new FormControl('602fbb7bbd0880ae1f65b57y'),
+      benifits_comments: new FormControl(''),
+      isOnline: new FormControl(this.isOn),
+     
     });
 
     
 
     if(this.data){
-      this.editEmployeeManagement(this.data);
+      this.editMarketingManagement(this.data);
     }
   }
 
   onSubmit() {
     this.isShow = false;
-    this.user.saveEmployee(this.myReactiveForm.value).subscribe((data) => {
+    this.user.saveMarketing(this.myReactiveForm.value).subscribe((data) => {
       this.myReactiveForm.reset();
-      this.presentToast("Employee added");
+      this.presentToast("Marketing added");
       this.closeModal();
     });
   }
@@ -65,7 +71,7 @@ export class AddEditEmployeePageModel implements OnInit {
     toast.present();
   }
 
-  editEmployeeManagement(data) {
+  editMarketingManagement(data) {
     this.isShow = true;
     //automatic set
     this.myReactiveForm.patchValue(data);
@@ -74,21 +80,23 @@ export class AddEditEmployeePageModel implements OnInit {
     this.myReactiveForm.get("id").setValue(data._id);
   }
 
-  updateEmployeeManagement(body) {
+  updateMarketingManagement(body) {
     //get value from form
     let id = this.myReactiveForm.get("id").value;
 
-    this.user.editEmployee(body.value, id).subscribe((data) => {
+    this.user.editMarketing(body.value, id).subscribe((data) => {
       this.myReactiveForm.reset();
       this.isShow = false;
       this.closeModal();
-      this.presentToast("Employee Updated");
+      this.presentToast("Marketing Updated");
     });
   }
-  getDepartment() {
-    this.user.getDept().subscribe((result) => {
-      console.log("Department result", result);
-      this.departmentList = result["response"];
-    });
-  }
+  // getEmployee() {
+  //   this.user.getEmp().subscribe((result) => {
+  //     console.log("Employee result", result);
+  //     this.employeeList = result["response"];
+  //   });
+  // }
+
+ 
 }

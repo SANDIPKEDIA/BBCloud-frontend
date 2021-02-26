@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/induction"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Induction</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Induction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="emp_name"
+          autocomplete="off"
+          formControlName="emp_name"
+          placeholder="Enter Employee Name"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+    <br>
+
+    
+    <div class="form-group">
+    
+      <ion-item>
+        <ion-label>Employee :</ion-label>
+        <ion-select  placeholder="Employee id" formControlName="empId">
+          <section>
+            <ion-select-option [value]="list._id" *ngFor="let list of employeeList">{{list.name}}</ion-select-option>
+        </section>
+        </ion-select>
+      </ion-item>
+
+  </div>
+  
+   
+    <br>
+    <div class="form-group">
+    <ion-item>
+      <ion-label>Joining Date: </ion-label>
+      <ion-input
+        type="date"
+        class="form-control"
+        id="joining_date"
+        autocomplete="off"
+        formControlName="joining_date"
+        placeholder="Enter Joining Date"
+      ></ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+        <ion-label>Completed Date: </ion-label>
+        <ion-input
+          type="date"
+          class="form-control"
+          id="induction_completed_date"
+          autocomplete="off"
+          formControlName="induction_completed_date"
+          placeholder="Enter Completed Date"
+        ></ion-input>
+      </ion-item>
+      </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-input
+      type="text"
+      class="form-control"
+      id="status"
+      autocomplete="off"
+      formControlName="status"
+      placeholder="Enter Status"
+    >
+  
+  </ion-input>
+</ion-item>
+</div>
+<br>
+<br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateInductionManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

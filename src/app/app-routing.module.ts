@@ -124,7 +124,26 @@ const routes: Routes = [
   {
     path:'organisation',
     loadChildren: () => import('./pages/organisation/organisation.module').then( m =>m.OrganisationPageModule)
-  }
+  },
+  {
+    path:'order',
+    loadChildren: () => import('./pages/order/order.module').then( m =>m.OrderPageModule)
+  },
+  {
+    path:'induction',
+    loadChildren: () => import('./pages/induction/induction.module').then( m =>m.InductionPageModule)
+  },
+  {
+    path:'plan',
+    loadChildren: () => import('./pages/plan/plan.module').then( m =>m.PlanPageModule)
+  },
+  {
+    path:'marketing',
+    loadChildren: () => import('./pages/marketing/marketing.module').then( m =>m.MarketingPageModule)
+  },
+
+
+
 
 
 

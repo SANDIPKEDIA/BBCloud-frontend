@@ -213,5 +213,111 @@ editOrg(body,id)
   return this.http.put(url,body);
 }
 
+//order
+
+
+getOrder()
+{
+  let url="//localhost:4000/api/v1/getallorder"
+  return this.http.get(url);
+}
+
+saveOrder(body)
+{
+  let url="//localhost:4000/api/v1/createOrder"
+  return this.http.post(url,body);
+}
+
+deleteOrder(id)
+{
+  let url="//localhost:4000/api/v1/deleteorder/"+id
+  return this.http.delete(url);
+}
+
+editOrder(body,id)
+{
+  let url="//localhost:4000/api/v1/editorder/"+id
+  return this.http.put(url,body);
+}
+
+
+//induction
+
+
+getInduction()
+{
+  let url="//localhost:4000/api/v1/getallInductionManagement"
+  return this.http.get(url);
+}
+
+saveInduction(body)
+{
+  let url="//localhost:4000/api/v1/createInductionManagement"
+  return this.http.post(url,body);
+}
+
+deleteInduction(id)
+{
+  let url="//localhost:4000/api/v1/deleteInductionManagement/"+id
+  return this.http.delete(url);
+}
+
+editInduction(body,id)
+{
+  let url="//localhost:4000/api/v1/editPlanManagement/"+id
+  return this.http.put(url,body);
+}
+
+//plan
+
+getPlan()
+{
+  let url="//localhost:4000/api/v1/getallPlanManagement"
+  return this.http.get(url);
+}
+
+savePlan(body)
+{
+  let url="//localhost:4000/api/v1/createPlanManagement"
+  return this.http.post(url,body);
+}
+
+deletePlan(id)
+{
+  let url="//localhost:4000/api/v1/deletePlanManagement/"+id
+  return this.http.delete(url);
+}
+
+editPlan(body,id)
+{
+  let url="//localhost:4000/api/v1/editPlanManagement/"+id
+  return this.http.put(url,body);
+}
+//marketing
+
+
+getMarketing()
+{
+  let url="//localhost:4000/api/v1/getallMarketingManagement"
+  return this.http.get(url);
+}
+
+saveMarketing(body)
+{
+  let url="//localhost:4000/api/v1/createMarketingManagement"
+  return this.http.post(url,body);
+}
+
+deleteMarketing(id)
+{
+  let url="//localhost:4000/api/v1/deleteMarketingManagement/"+id
+  return this.http.delete(url);
+}
+
+editMarketing(body,id)
+{
+  let url="//localhost:4000/api/v1/editMarketingManagement/"+id
+  return this.http.put(url,body);
+}
 
 }

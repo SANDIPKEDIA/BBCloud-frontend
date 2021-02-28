@@ -141,6 +141,19 @@ const routes: Routes = [
     path:'marketing',
     loadChildren: () => import('./pages/marketing/marketing.module').then( m =>m.MarketingPageModule)
   },
+  {
+    path:'git',
+    loadChildren: () => import('./pages/git/git.module').then( m =>m.GitPageModule)
+  },
+  {
+    path:'project',
+    loadChildren: () => import('./pages/project/project.module').then( m =>m.ProjectPageModule)
+  },
+
+  {
+    path:'vacancy',
+    loadChildren: () => import('./pages/vacancy/vacancy.module').then( m =>m.VacancyPageModule)
+  },
 
 
 

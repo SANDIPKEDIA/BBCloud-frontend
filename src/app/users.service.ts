@@ -320,4 +320,84 @@ editMarketing(body,id)
   return this.http.put(url,body);
 }
 
+//git
+
+getGit()
+{
+  let url="//localhost:4000/api/v1/getallgitmanage"
+  return this.http.get(url);
+}
+
+saveGit(body)
+{
+  let url="//localhost:4000/api/v1/creategitmanage"
+  return this.http.post(url,body);
+}
+
+deleteGit(id)
+{
+  let url="//localhost:4000/api/v1/deletegitManage/"+id
+  return this.http.delete(url);
+}
+
+editGit(body,id)
+{
+  let url="//localhost:4000/api/v1/editgitManage/"+id
+  return this.http.put(url,body);
+}
+
+
+//project
+
+
+
+getProject()
+{
+  let url="//localhost:4000/api/v1/getallProjectManage"
+  return this.http.get(url);
+}
+
+saveProject(body)
+{  let url="//localhost:4000/api/v1/createProjectManage"
+  return this.http.post(url,body);
+}
+
+deleteProject(id)
+{
+  let url="//localhost:4000/api/v1/deleteProjectmanage/"+id
+  return this.http.delete(url);
+}
+
+editProject(body,id)
+{
+  let url="//localhost:4000/api/v1/editProjectmanage/"+id
+  return this.http.put(url,body);
+}
+
+
+//vacancy
+
+
+getVacancy()
+{
+  let url="//localhost:4000/api/v1/getallVacancyManagement"
+  return this.http.get(url);
+}
+
+saveVacancy(body)
+{  let url="//localhost:4000/api/v1/createVacancyManagement"
+  return this.http.post(url,body);
+}
+
+deleteVacancy(id)
+{
+  let url="//localhost:4000/api/v1/deleteVacancymanagement/"+id
+  return this.http.delete(url);
+}
+
+editVacancy(body,id)
+{
+  let url="//localhost:4000/api/v1/editVacancymanagement/"+id
+  return this.http.put(url,body);
+}
 }

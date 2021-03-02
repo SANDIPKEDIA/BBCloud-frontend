@@ -28,7 +28,7 @@ import { AccountService } from './providers/account.service';
 import { FinanceService } from './providers/finance.service';
 import { FirstComponent } from './first/first.component';
 import { UsersService } from './users.service';
-
+import { NoteManagementService } from './providers/note-management.service';
 
  
 @NgModule({
@@ -60,7 +60,8 @@ import { UsersService } from './users.service';
     NotificationsService,BackgroundMode,Vibration,
     Push,
     AccountService,
-    FinanceService
+    FinanceService,
+    NoteManagementService
 
   ],
   bootstrap: [AppComponent],

@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/customertouchpoint"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add CustomerTouchPoint</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update CustomerTouchPoint</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      
+      <ion-input
+      type="text"
+      class="form-control"
+      id="tile"
+      autocomplete="off"
+      formControlName="title"
+      placeholder="Enter Title"
+    >
+  
+  </ion-input>
+</div>
+<br>
+<div class="form-group">
+  <ion-input
+    type="date"
+    class="form-control"
+    id="date"
+    autocomplete="off"
+    formControlName="date"
+    placeholder="Enter Date"
+  ></ion-input>
+
+
+
+<br>
+<div class="form-group">
+  <ion-textarea
+    class="form-control"
+    id="description"
+    autocomplete="off"
+    formControlName="description"
+    placeholder="Enter Description"
+  ></ion-textarea>
+</div>
+<br>
+<div class="form-group">
+  <ion-input
+    type="text"
+    class="form-control"
+    id="project"
+    autocomplete="off"
+    formControlName="project"
+    placeholder="Enter Project"
+  ></ion-input>
+</div>
+<br>
+<div class="form-group">
+  <ion-textarea
+    class="form-control"
+    id="benifit"
+    autocomplete="off"
+    formControlName="benifit"
+    placeholder="Enter Benifit"
+  ></ion-textarea>
+</div>
+
+</div>
+    <br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateCustomertouchpoint(myReactiveForm)">Update</ion-button>
+    
+  
+    <br>
+    
+  </form>

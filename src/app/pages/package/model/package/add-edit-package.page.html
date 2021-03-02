@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/package"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Package</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Package</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="name"
+          autocomplete="off"
+          formControlName="name"
+          placeholder="Enter Name"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-textarea
+      class="form-control"
+      id="details"
+      autocomplete="off"
+      formControlName="details"
+      placeholder="Enter Details"
+    >
+  
+  </ion-textarea>
+</ion-item>
+</div>
+<br>
+
+   
+   
+ 
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="price"
+  autocomplete="off"
+  formControlName="price"
+  placeholder="Enter Price"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="tags"
+  autocomplete="off"
+  formControlName="tags"
+  placeholder="Enter Tag"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updatePackageManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

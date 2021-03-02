@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/training"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add TrainingManagement</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update TrainingManagement</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="title"
+          autocomplete="off"
+          formControlName="title"
+          placeholder="Enter Title"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-input
+      type="text"
+      class="form-control"
+      id="video_url"
+      autocomplete="off"
+      formControlName="video_url"
+      placeholder="Enter Video-Url"
+    >
+  
+  </ion-input>
+</ion-item>
+</div>
+<br>
+
+    <div class="form-group">
+      <ion-item>
+      <ion-textarea
+      class="form-control"
+      id="description"
+      autocomplete="off"
+      formControlName="description"
+      placeholder="Enter Description"
+    >
+  
+  </ion-textarea>
+</ion-item>
+</div>
+   
+ 
+<br>
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="catagory"
+  autocomplete="off"
+  formControlName="catagory"
+  placeholder="Enter Catagory"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="date"
+  class="form-control"
+  id="date"
+  autocomplete="off"
+  formControlName="date"
+  placeholder="Enter Date"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+
+    
+
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateTrainingManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

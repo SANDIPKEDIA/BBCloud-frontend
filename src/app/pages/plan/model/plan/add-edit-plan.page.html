@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/plan"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Plan</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Plan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="title"
+          autocomplete="off"
+          formControlName="title"
+          placeholder="Enter Title"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+    <br>
+
+    
+ 
+  
+   
+    
+    <div class="form-group">
+    <ion-item>
+      <ion-label>Start Date: </ion-label>
+      <ion-input
+        type="date"
+        class="form-control"
+        id="start_date"
+        autocomplete="off"
+        formControlName="start_date"
+        placeholder="Enter Start Date"
+      ></ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+        <ion-label>End Date: </ion-label>
+        <ion-input
+          type="date"
+          class="form-control"
+          id="end_date"
+          autocomplete="off"
+          formControlName="end_date"
+          placeholder="Enter End Date"
+        ></ion-input>
+      </ion-item>
+      </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-textarea
+      class="form-control"
+      id="description"
+      autocomplete="off"
+      formControlName="description"
+      placeholder="Enter Description"
+    >
+  
+      </ion-textarea>
+</ion-item>
+</div>
+<br>
+<div class="form-group">
+  <ion-item>
+  <ion-textarea
+  class="form-control"
+  id="comments"
+  autocomplete="off"
+  formControlName="comments"
+  placeholder="Enter Comments"
+>
+
+  </ion-textarea>
+</ion-item>
+</div>
+<br>
+<br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updatePlanManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

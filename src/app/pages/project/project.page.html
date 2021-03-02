@@ -1,0 +1,73 @@
+ 
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: white"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Project Management</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+<!-- <br> -->
+<!-- <h4 >&nbsp;&nbsp;&nbsp;Induction List</h4> -->
+<ion-list-header color="light">
+  <h4>
+  <ion-label>Project List</ion-label>
+  </h4>
+</ion-list-header>
+
+
+<ion-item-sliding id="item100" *ngFor="let item of list" >
+    
+  
+  <ion-item >
+    <!-- <ion-row>
+      <ion-col>{{ item.name }}</ion-col>
+      <ion-col>{{ item.mobile }}</ion-col> 
+      <ion-col>{{ item.age }}</ion-col> 
+      <ion-col>{{ item.address }}</ion-col> 
+      <ion-col>{{ item.store_name }}</ion-col> 
+      <ion-col>{{ item.package }}</ion-col>  -->
+      <ion-label>
+        <h2 ion-text color="primary">Name : {{item.name}}</h2>
+        <p>Description : {{item.description}}</p>
+        <p>Head : {{item.head}}</p>
+      
+        
+     
+      </ion-label>
+        
+    <!-- </ion-row> -->
+    <!-- <ion-row> -->
+      <!-- <ion-col style="font-size: 10px">{{ item.description }}</ion-col> -->
+      
+    <!-- </ion-row> -->
+
+    <!-- <div name="main" style="position:relative;display:grid;">
+      <p [class]="show?'showText':'hideText'">{{ item.name}}</p>
+      <div [class]="show?'showReadMore':'showReadLess'" (click)="displayText()">
+        {{show?'Less details':'More details'}}
+     </div>
+    </div>  -->
+    
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option color="warning" (click)="openEditProjectModal(item)">
+      <ion-icon slot="icon-only" name="create"></ion-icon>
+    </ion-item-option>
+    <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="openAddProjectModal()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

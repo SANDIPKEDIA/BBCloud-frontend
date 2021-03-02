@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/vacancy"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add VacancyManagement</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update VacancyManagement</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="post_name"
+          autocomplete="off"
+          formControlName="post_name"
+          placeholder="Enter Post Name"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-input
+      type="Number"
+      class="form-control"
+      id="vacancies"
+      autocomplete="off"
+      formControlName="vacancies"
+      placeholder="Enter Vacancies"
+    >
+  
+  </ion-input>
+</ion-item>
+</div>
+<br>
+
+    <div class="form-group">
+      <ion-item>
+      <ion-textarea
+      class="form-control"
+      id="description"
+      autocomplete="off"
+      formControlName="description"
+      placeholder="Enter Description"
+    >
+  
+  </ion-textarea>
+</ion-item>
+</div>
+   
+ 
+<br>
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="skills"
+  autocomplete="off"
+  formControlName="skills"
+  placeholder="Enter Skills"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="minQualification"
+  autocomplete="off"
+  formControlName="minQualification"
+  placeholder="Enter Minimum Qualification"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="experience"
+  autocomplete="off"
+  formControlName="experience"
+  placeholder="Enter Experience"
+>
+</ion-input>
+</ion-item>
+</div>
+
+
+    
+<br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateVacancyManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

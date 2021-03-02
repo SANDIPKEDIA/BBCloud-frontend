@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/order"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Order</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="name"
+          autocomplete="off"
+          formControlName="name"
+          placeholder="Enter Name"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+  
+    <br>
+    <div class="form-group">
+    <ion-item>
+      <ion-input
+        type="text"
+        class="form-control"
+        id="store_name"
+        autocomplete="off"
+        formControlName="store_name"
+        placeholder="Enter Store Name"
+      ></ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+    <ion-item>
+      <ion-input
+        type="number"
+        class="form-control"
+        id="contact"
+        autocomplete="off"
+        formControlName="contact"
+        placeholder="Enter Number"
+      ></ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+    
+      <ion-item>
+        <ion-label>Prototype :</ion-label>
+        <ion-select  placeholder="Prototype id" formControlName="prototype_id">
+          <section>
+            <ion-select-option [value]="list._id" *ngFor="let list of prototypeList">{{list.name}}</ion-select-option>
+        </section>
+        </ion-select>
+      </ion-item>
+
+  </div>
+    <br>
+    <div class="form-group">
+    <ion-item>
+      <ion-input
+        type="text"
+        class="form-control"
+        id="address"
+        autocomplete="off"
+        formControlName="address"
+        placeholder="Enter Address"
+      ></ion-input>
+    </ion-item>
+    </div>
+   
+    <br>
+    <div class="form-group">
+    <ion-item>
+      <ion-input
+        type="date"
+        class="form-control"
+        id="date"
+        autocomplete="off"
+        formControlName="date"
+        placeholder="Enter Date"
+      ></ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+    <ion-item>
+      <ion-textarea
+        class="form-control"
+        id="comments"
+        autocomplete="off"
+        formControlName="comments"
+        placeholder="Enter Comments"
+      ></ion-textarea>
+    </ion-item>
+    </div>
+    <br>
+    <br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateOrderManagement(myReactiveForm)">Update</ion-button>
+    
+  
+    <br>
+    
+  </form>

@@ -116,7 +116,79 @@ const routes: Routes = [
   {
     path:'feedback',
     loadChildren: () => import('./pages/feedback/feedback.module').then( m =>m.FeedbackPageModule)
-  }
+  },
+  {
+    path:'customertouchpoint',
+    loadChildren: () => import('./pages/customertouchpoint/customertouchpoint.module').then( m =>m.CustomertouchpointPageModule)
+  },
+  {
+    path:'organisation',
+    loadChildren: () => import('./pages/organisation/organisation.module').then( m =>m.OrganisationPageModule)
+  },
+  {
+    path:'order',
+    loadChildren: () => import('./pages/order/order.module').then( m =>m.OrderPageModule)
+  },
+  {
+    path:'induction',
+    loadChildren: () => import('./pages/induction/induction.module').then( m =>m.InductionPageModule)
+  },
+  {
+    path:'plan',
+    loadChildren: () => import('./pages/plan/plan.module').then( m =>m.PlanPageModule)
+  },
+  {
+    path:'marketing',
+    loadChildren: () => import('./pages/marketing/marketing.module').then( m =>m.MarketingPageModule)
+  },
+  {
+    path:'git',
+    loadChildren: () => import('./pages/git/git.module').then( m =>m.GitPageModule)
+  },
+  {
+    path:'project',
+    loadChildren: () => import('./pages/project/project.module').then( m =>m.ProjectPageModule)
+  },
+
+  {
+    path:'vacancy',
+    loadChildren: () => import('./pages/vacancy/vacancy.module').then( m =>m.VacancyPageModule)
+  },
+  {
+    path:'training',
+    loadChildren: () => import('./pages/training/training.module').then( m =>m.TrainingPageModule)
+  },
+  {
+    path:'package',
+    loadChildren: () => import('./pages/package/package.module').then( m =>m.PackagePageModule)
+  },
+  {
+    path:'knowledgecenter',
+    loadChildren: () => import('./pages/knowledge/knowledge.module').then( m =>m.KnowledgeCenterPageModule)
+  },
+  {
+    path:'feature',
+    loadChildren: () => import('./pages/feature/feature.module').then( m =>m.FeaturePageModule)
+  },
+  {
+    path:'ticket',
+    loadChildren: () => import('./pages/ticket/ticket.module').then( m =>m.TicketPageModule)
+  },
+  {
+    path:'work',
+    loadChildren: () => import('./pages/work/work.module').then( m =>m.WorkPageModule)
+  },
+  {
+    path:'todo',
+    loadChildren: () => import('./pages/todo/todo.module').then( m =>m.TodoPageModule)
+  },
+  {
+    path:'meeting',
+    loadChildren: () => import('./pages/meeting/meeting.module').then( m =>m.MeetingPageModule)
+  },
+
+
+
 
 
 

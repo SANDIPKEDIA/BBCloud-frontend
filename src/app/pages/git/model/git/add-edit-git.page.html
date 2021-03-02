@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/git"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add GitManagement</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update GitManagement</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="repo_name"
+          autocomplete="off"
+          formControlName="repo_name"
+          placeholder="Enter Repo Name"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <ion-item>
+      <ion-input
+      type="text"
+      class="form-control"
+      id="url"
+      autocomplete="off"
+      formControlName="url"
+      placeholder="Enter Url"
+    >
+  
+  </ion-input>
+</ion-item>
+</div>
+   
+ 
+<br>
+<!-- <div class="form-group">
+
+  <ion-item>
+    <ion-label>Account :</ion-label>
+    <ion-select  placeholder="Prototype id" formControlName="account">
+      <section>
+        <ion-select-option [value]="list._id" *ngFor="let list of prototypeList">{{list.name}}</ion-select-option>
+    </section>
+    </ion-select>
+  </ion-item>
+
+</div> -->
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="account"
+  autocomplete="off"
+  formControlName="account"
+  placeholder="Enter Account"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="username"
+  autocomplete="off"
+  formControlName="username"
+  placeholder="Enter Username"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>  
+
+<div class="form-group">
+
+  <ion-item>
+    <ion-label>Prototype :</ion-label>
+    <ion-select  placeholder="Prototype id" formControlName="prototypeId">
+      <section>
+        <ion-select-option [value]="list._id" *ngFor="let list of prototypeList">{{list.name}}</ion-select-option>
+    </section>
+    </ion-select>
+  </ion-item>
+
+</div>
+<br>
+   
+    
+    <div class="form-group">
+    <ion-item>
+      <!-- <ion-label>Start Date: </ion-label> -->
+      <ion-input
+        type="password"
+        class="form-control"
+        id="password"
+        autocomplete="off"
+        formControlName="password"
+        placeholder="Enter Password"
+      ></ion-input>
+    </ion-item>
+    </div>
+    
+<br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateGitManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/todo"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Todo</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Todo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="task_name"
+          autocomplete="off"
+          formControlName="task_name"
+          placeholder="Enter Task Name"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+    <br>
+    <div class="form-group">
+      <ion-item>
+      <ion-input
+      type="text"
+      class="form-control"
+      id="userId"
+      autocomplete="off"
+      formControlName="userId"
+      placeholder="Enter UserId"
+    >
+  
+      </ion-input>
+</ion-item>
+</div>
+<br>
+
+    <div class="form-group">
+      <ion-item>
+      <ion-input
+      type="text"
+      class="form-control"
+      id="incompleted_task"
+      autocomplete="off"
+      formControlName="incompleted_task"
+      placeholder="Enter Incompleted Task"
+    >
+  
+      </ion-input>
+</ion-item>
+</div>
+   
+ 
+<br>
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="priority"
+  autocomplete="off"
+  formControlName="priority"
+  placeholder="Enter Priority"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="date"
+  class="form-control"
+  id="date"
+  autocomplete="off"
+  formControlName="date"
+  placeholder="Enter Date"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+
+
+    
+
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateTodoManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/feature"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Feature</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Feature</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="feature_name"
+          autocomplete="off"
+          formControlName="feature_name"
+          placeholder="Enter Feature Name"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+   
+<br>
+
+<div class="form-group">
+
+  <ion-item>
+    <ion-label>Package :</ion-label>
+    <ion-select  placeholder="Package id" formControlName="package_id">
+      <section>
+        <ion-select-option [value]="list._id" *ngFor="let list of packageList">{{list.name}}</ion-select-option>
+    </section>
+    </ion-select>
+  </ion-item>
+
+</div>
+<br>
+
+
+
+    <div class="form-group">
+      <ion-item>
+      <ion-textarea
+      class="form-control"
+      id="description"
+      autocomplete="off"
+      formControlName="description"
+      placeholder="Enter Description"
+    >
+  
+  </ion-textarea>
+</ion-item>
+</div>
+   
+ 
+    
+<br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateFeatureManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

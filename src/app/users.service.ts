@@ -400,4 +400,214 @@ editVacancy(body,id)
   let url="//localhost:4000/api/v1/editVacancymanagement/"+id
   return this.http.put(url,body);
 }
+
+
+//Training
+
+getTraining()
+{
+  let url="//localhost:4000/api/v1/alltraining"
+  return this.http.get(url);
+}
+
+saveTraining(body)
+{  let url="//localhost:4000/api/v1/createtraining"
+  return this.http.post(url,body);
+}
+
+deleteTraining(id)
+{
+  let url="//localhost:4000/api/v1/deletetraining/"+id
+  return this.http.delete(url);
+}
+
+editTraining(body,id)
+{
+  let url="//localhost:4000/api/v1/edittraining/"+id
+  return this.http.put(url,body);
+}
+
+
+//package
+
+
+getPackage()
+{
+  let url="//localhost:4000/api/v1/GetallPkg"
+  return this.http.get(url);
+}
+
+savePackage(body)
+{  let url="//localhost:4000/api/v1/CreatePkg"
+  return this.http.post(url,body);
+}
+
+deletePackage(id)
+{
+  let url="//localhost:4000/api/v1/deletePkg/"+id
+  return this.http.delete(url);
+}
+
+editPackage(body,id)
+{
+  let url="//localhost:4000/api/v1/EditPkg/"+id
+  return this.http.put(url,body);
+}
+
+//knowledge
+
+getKnowledgeCenter()
+{
+  let url="//localhost:4000/api/v1/GetallCenterDetails"
+  return this.http.get(url);
+}
+
+saveKnowledgeCenter(body)
+{  let url="//localhost:4000/api/v1/CreateCenter"
+  return this.http.post(url,body);
+}
+
+deleteKnowledgeCenter(id)
+{
+  let url="//localhost:4000/api/v1/deletecenter/"+id
+  return this.http.delete(url);
+}
+
+editKnowledgeCenter(body,id)
+{
+  let url="//localhost:4000/api/v1/editcenter/"+id
+  return this.http.put(url,body);
+}
+
+//Feature
+
+getFeature()
+{
+  let url="//localhost:4000/api/v1/GetallFeature"
+  return this.http.get(url);
+}
+
+saveFeature(body)
+{  let url="//localhost:4000/api/v1/CreateFeature"
+  return this.http.post(url,body);
+}
+
+deleteFeature(id)
+{
+  let url="//localhost:4000/api/v1/deleteFeature/"+id
+  return this.http.delete(url);
+}
+
+editFeature(body,id)
+{
+  let url="//localhost:4000/api/v1/editFeature/"+id
+  return this.http.put(url,body);
+}
+//ticket
+
+
+
+getTicket()
+{
+  let url="//localhost:4000/api/v1/GetallTicketDetails"
+  return this.http.get(url);
+}
+
+saveTicket(body)
+{  let url="//localhost:4000/api/v1/CreateTicket"
+  return this.http.post(url,body);
+}
+
+deleteTicket(id)
+{
+  let url="//localhost:4000/api/v1/deleteticket/"+id
+  return this.http.delete(url);
+}
+
+editTicket(body,id)
+{
+  let url="//localhost:4000/api/v1/ticketupdate/"+id
+  return this.http.put(url,body);
+}
+
+//work
+
+getWork()
+{
+  let url="//localhost:4000/api/v1/getallwork"
+  return this.http.get(url);
+}
+
+saveWork(body)
+{  let url="//localhost:4000/api/v1/creatework"
+  return this.http.post(url,body);
+}
+
+deleteWork(id)
+{
+  let url="//localhost:4000/api/v1/deletework/"+id
+  return this.http.delete(url);
+}
+
+editWork(body,id)
+{
+  let url="//localhost:4000/api/v1/editwork/"+id
+  return this.http.put(url,body);
+}
+
+//todo
+
+
+getTodo()
+{
+  let url="//localhost:4000/api/v1/getalltodo"
+  return this.http.get(url);
+}
+
+saveTodo(body)
+{  let url="//localhost:4000/api/v1/Createtodo"
+  return this.http.post(url,body);
+}
+
+deleteTodo(id)
+{
+  let url="//localhost:4000/api/v1/deletetodo/"+id
+  return this.http.delete(url);
+}
+
+editTodo(body,id)
+{
+  let url="//localhost:4000/api/v1/edittodo/"+id
+  return this.http.put(url,body);
+}
+
+
+//meeting
+
+
+getMeeting()
+{
+  let url="//localhost:4000/api/v1/getallmeeting"
+  return this.http.get(url);
+}
+
+saveMeeting(body)
+{  let url="//localhost:4000/api/v1/createmeeting"
+  return this.http.post(url,body);
+}
+
+deleteMeeting(id)
+{
+  let url="//localhost:4000/api/v1/deletemeeting/"+id
+  return this.http.delete(url);
+}
+
+editMeeting(body,id)
+{
+  let url="//localhost:4000/api/v1/editmeeting/"+id
+  return this.http.put(url,body);
+}
+
+
+
 }

@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/knowledgecenter"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add KnowledgeCenter</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update KnowledgeCenter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="title"
+          autocomplete="off"
+          formControlName="title"
+          placeholder="Enter Title"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+    <br>
+  
+
+      
+    <div class="form-group">
+      <ion-item>
+      <ion-input
+      type="text"
+      class="form-control"
+      id="content"
+      autocomplete="off"
+      formControlName="content"
+      placeholder="Enter Content"
+    >
+  
+  </ion-input>
+</ion-item>
+</div>
+<br>
+
+   
+   
+ 
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="attachments"
+  autocomplete="off"
+  formControlName="attachments"
+  placeholder="Enter Attachment"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="tags"
+  autocomplete="off"
+  formControlName="tags"
+  placeholder="Enter Tag"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="text"
+  class="form-control"
+  id="notes"
+  autocomplete="off"
+  formControlName="notes"
+  placeholder="Enter Notes"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+<div class="form-group">
+  <ion-item>
+  <ion-input
+  type="date"
+  class="form-control"
+  id="date"
+  autocomplete="off"
+  formControlName="date"
+  placeholder="Enter Date"
+>
+
+</ion-input>
+</ion-item>
+</div>
+<br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateKnowledgeCenterManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

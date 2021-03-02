@@ -154,6 +154,38 @@ const routes: Routes = [
     path:'vacancy',
     loadChildren: () => import('./pages/vacancy/vacancy.module').then( m =>m.VacancyPageModule)
   },
+  {
+    path:'training',
+    loadChildren: () => import('./pages/training/training.module').then( m =>m.TrainingPageModule)
+  },
+  {
+    path:'package',
+    loadChildren: () => import('./pages/package/package.module').then( m =>m.PackagePageModule)
+  },
+  {
+    path:'knowledgecenter',
+    loadChildren: () => import('./pages/knowledge/knowledge.module').then( m =>m.KnowledgeCenterPageModule)
+  },
+  {
+    path:'feature',
+    loadChildren: () => import('./pages/feature/feature.module').then( m =>m.FeaturePageModule)
+  },
+  {
+    path:'ticket',
+    loadChildren: () => import('./pages/ticket/ticket.module').then( m =>m.TicketPageModule)
+  },
+  {
+    path:'work',
+    loadChildren: () => import('./pages/work/work.module').then( m =>m.WorkPageModule)
+  },
+  {
+    path:'todo',
+    loadChildren: () => import('./pages/todo/todo.module').then( m =>m.TodoPageModule)
+  },
+  {
+    path:'meeting',
+    loadChildren: () => import('./pages/meeting/meeting.module').then( m =>m.MeetingPageModule)
+  },
 
 
 

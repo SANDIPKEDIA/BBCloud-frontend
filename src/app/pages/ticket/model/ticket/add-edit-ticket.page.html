@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/ticket"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='!isShow' id="top">Add Ticket</ion-title>
+    <ion-title *ngIf='isShow' id="top">Update Ticket</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form style="margin: 20px;" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+          <ion-item>
+          <ion-input
+          type="text"
+          class="form-control"
+          id="ticket_name"
+          autocomplete="off"
+          formControlName="ticket_name"
+          placeholder="Enter Ticket Name"
+        >
+      
+      </ion-input>
+    </ion-item>
+    </div>
+   
+<br>
+
+<div class="form-group">
+
+  <ion-item>
+    <ion-label>Employee :</ion-label>
+    <ion-select  placeholder="Emp id" formControlName="assignee">
+      <section>
+        <ion-select-option [value]="list._id" *ngFor="let list of empList">{{list.name}}</ion-select-option>
+    </section>
+    </ion-select>
+  </ion-item>
+
+</div>
+<br>
+
+
+
+    <div class="form-group">
+      <ion-item>
+      <ion-textarea
+      class="form-control"
+      id="description"
+      autocomplete="off"
+      formControlName="description"
+      placeholder="Enter Description"
+    >
+  
+  </ion-textarea>
+</ion-item>
+</div>
+
+<br>
+
+<div class="form-group">
+  <ion-item>
+    <ion-label>Start Date: </ion-label>
+    <ion-input
+      type="date"
+      class="form-control"
+      id="startdate"
+      autocomplete="off"
+      formControlName="startdate"
+      placeholder="Enter Start Date"
+    ></ion-input>
+  </ion-item>
+  </div>
+  <br>
+  <div class="form-group">
+    <ion-item>
+      <ion-label>End Date: </ion-label>
+      <ion-input
+        type="date"
+        class="form-control"
+        id="enddate"
+        autocomplete="off"
+        formControlName="enddate"
+        placeholder="Enter End Date"
+      ></ion-input>
+    </ion-item>
+    </div>
+  <br>
+  <div class="form-group">
+    <ion-item>
+      <ion-label>isBlocker :</ion-label>
+      <ion-select  placeholder="isBlocker" formControlName="isBlocker">
+        <section>
+          <ion-select-option [value]="true">True</ion-select-option>
+          <ion-select-option [value]="false">False</ion-select-option>
+      </section>
+      </ion-select>
+    </ion-item>
+  </div>
+  <br>
+
+
+
+<div class="form-group">
+  <ion-item>
+  <ion-textarea
+  class="form-control"
+  id="comments"
+  autocomplete="off"
+  formControlName="comments"
+  placeholder="Enter Comments"
+>
+
+</ion-textarea>
+</ion-item>
+</div>
+<br>
+
+
+   
+ 
+    
+<br>
+    <ion-button type="submit" *ngIf='!isShow' color="primary">Submit</ion-button>
+    <ion-button type="button" *ngIf='isShow' color="primary" value="update" (click)="updateTicketManagement(myReactiveForm)">Update</ion-button>
+    
+  
+  
+    
+  </form>

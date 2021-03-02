@@ -7,7 +7,7 @@ import { UsersService } from "../../../../users.service";
 @Component({
   selector: "app-add-edit-prototype",
   templateUrl: "./add-edit-prototype.page.html",
-  styleUrls: ["./add-edit-prototype.page.scss"],
+  
 })
 export class AddEditPrototypePageModel implements OnInit {
   myReactiveForm: FormGroup;

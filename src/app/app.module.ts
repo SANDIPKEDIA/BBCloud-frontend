@@ -27,7 +27,6 @@ import { Push, PushObject } from '@ionic-native/push/ngx';
 import { AccountService } from './providers/account.service';
 import { FinanceService } from './providers/finance.service';
 import { FirstComponent } from './first/first.component';
-import { ContactComponent } from './contact/contact.component';
 import { UsersService } from './users.service';
 
 
@@ -46,7 +45,7 @@ import { UsersService } from './users.service';
     }),
     BrowserAnimationsModule,
   ],
-  declarations: [AppComponent,OrderIncomingPage,FirstComponent,ContactComponent],
+  declarations: [AppComponent,OrderIncomingPage,FirstComponent],
   providers: [InAppBrowser ,FileTransfer,SplashScreen,SocketService, StatusBar,SocialSharing,UsersService,
     {
       provide: HTTP_INTERCEPTORS,

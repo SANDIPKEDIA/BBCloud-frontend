@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.admin.punjabihandi" version="0.0.14" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Admin Management</name>
-    <description>Handi Punajb di</description>
+<widget id="com.businessbanao.bcloud" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>BCloud</name>
+    <description>Business Banao Internal Management Portal</description>
     <author email="contact@badhaobusiness.in" href="http://badhaobusiness.in/">Shashwat Gupta</author>
     <content src="index.html" />
     <access origin="*" />
@@ -107,8 +107,8 @@
         <variable name="ANDROID_SUPPORT_V13_VERSION" value="27.+" />
         <variable name="FCM_VERSION" value="17.0.+" />
     </plugin>
+    <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
     <engine name="browser" spec="^6.0.0" />
     <engine name="ios" spec="^5.1.1" />
-    <engine name="android" spec="^7.1.4" />
-    <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
+    <engine name="android" spec="7.1.4" />
 </widget>

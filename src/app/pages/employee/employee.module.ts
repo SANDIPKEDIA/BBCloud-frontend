@@ -11,6 +11,7 @@ import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditEmployeePageModel } from "./model/employee/add-edit-employee.page";
 import { EmployeePageRoutingModule } from './employee-routing.module';
+import { EmpDetailsPage  } from "./components/emp-details/emp-details";
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { EmployeePageRoutingModule } from './employee-routing.module';
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [EmployeePage, AddEditEmployeePageModel],
+  declarations: [EmployeePage, AddEditEmployeePageModel,EmpDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditEmployeePageModel]
 })

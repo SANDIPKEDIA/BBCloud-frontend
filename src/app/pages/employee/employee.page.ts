@@ -17,7 +17,7 @@ export class EmployeePage implements OnInit {
   isShow: boolean = false;
   editUserId;
   formData;
-  list: any;
+  list: any=[];
   // public del: string;
   constructor(
     private user: UsersService,

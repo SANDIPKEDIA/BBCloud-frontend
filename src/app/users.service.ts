@@ -66,6 +66,13 @@ export class UsersService {
     return this.http.get(url);
   }
 
+
+  getEmpDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/GetEmpbyid/${id}`
+    return this.http.get(url);
+  }
+
   saveEmployee(body)
   {
     let url=this.baseUrl + "/api/v1/CreateEmp"

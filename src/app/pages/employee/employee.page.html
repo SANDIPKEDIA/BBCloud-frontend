@@ -1,63 +1,70 @@
- 
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button style="color: white"></ion-menu-button>
+      <ion-menu-button  style="color: white;"></ion-menu-button>
+      
+        <!-- <ion-icon style="margin-left: 10px;font-size: 22px;"    name="arrow-back-outline"></ion-icon> -->
+      
     </ion-buttons>
-    <ion-title>Employee Management</ion-title>
-    
+    <ion-title>
+      Employee Management
+    </ion-title>
+    <ion-buttons slot="end" style="margin-right: 20px;" >
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+ <!-- <ion-searchbar #autofocus  *ngIf="showSearchBox"  spellcheck="true" placeholder="Search Customers" [(ngModel)]="searchWord" (ionChange)="search($event)"></ion-searchbar> -->
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
 
-<!-- <br> -->
-<!-- <h4 >&nbsp;&nbsp;&nbsp;Employee List</h4> -->
-<ion-list-header color="light">
-  <h4>
-  <ion-label>Employee List</ion-label>
-  </h4>
-</ion-list-header>
-
-
-<ion-item-sliding id="item100" *ngFor="let item of list" >
-    
-  
-  <ion-item >
-    <!-- <ion-row>
-      <ion-col>{{ item.name }}</ion-col>
-      <ion-col>{{ item.mobile }}</ion-col> 
-      <ion-col>{{ item.age }}</ion-col> 
-      <ion-col>{{ item.address }}</ion-col> 
-      <ion-col>{{ item.store_name }}</ion-col> 
-      <ion-col>{{ item.package }}</ion-col>  -->
-      <ion-label>
-        <h2 ion-text color="primary">Name: {{item.name}}</h2>
-        <p>Contact: {{item.email}}</p>
-        <p>Age: {{item.age}}</p>
-        <!-- <p>Department-Id: {{item.departmentId}}</p> -->
-        <p>Store Name: {{item.position}}</p>
+<ion-list *ngIf="list.length != 0">
+  <ion-item-sliding id="item100" *ngFor="let item of list">
+    <ion-item [routerLink]="['/employee/empdetails/'+ item._id ]">
        
-      </ion-label>
-        
-    <!-- </ion-row> -->
-    <!-- <ion-row> -->
-      <!-- <ion-col style="font-size: 10px">{{ item.description }}</ion-col> -->
-      
-    <!-- </ion-row> -->
-    
-  </ion-item>
-  <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="openEditEmployeeModal(item)">
-      <ion-icon slot="icon-only" name="create"></ion-icon>
-    </ion-item-option>
-    <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
-      <ion-icon slot="icon-only" name="trash"></ion-icon>
-    </ion-item-option>
-  </ion-item-options>
-</ion-item-sliding>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <img class="product-thumbnail" src="https://img.icons8.com/bubbles/2x/user-male.png">
+            <!-- {{item.label}} -->
+              
+          </ion-col>
+          <ion-col size="9">
+            <h6 class="product-name" *ngIf="item.name">{{item.name}}</h6>
+            <h6 class="product-name grey-color" *ngIf="!item.name">N/A</h6>
+            <span class="tag-name">{{item.email}}</span>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon class="call-icon" name="call-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
 
+    <p *ngIf="list.length == 0" class="noRecordsFound">No Records Found</p>
+
+    <ion-item-options side="end">
+      <ion-item-option *ngIf="!item.isAccountActive" color="success" (click)="deleteAlertConfirm(item._id,item.isAccountActive)">
+        <span >Enable</span>
+      </ion-item-option>
+      <ion-item-option *ngIf="item.isAccountActive" color="danger" (click)="deleteAlertConfirm(item._id,item.isAccountActive)">
+        <span >Disable</span>
+      </ion-item-option>
+
+    </ion-item-options>
+
+  </ion-item-sliding>
+</ion-list>
+
+
+
+
+ 
+ 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
   <ion-fab-button (click)="openAddEmployeeModal()">
     <ion-icon name="add"></ion-icon>

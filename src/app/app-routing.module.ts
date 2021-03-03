@@ -191,6 +191,11 @@ const routes: Routes = [
     path: 'notemgnt',
     loadChildren: () => import('./pages/note-management/note-management.module').then(m => m.NoteManagementPageModule)
   },
+  {
+    path: 'docmgnt',
+    loadChildren: () => import('./pages/training-management /training-management.module').then(m => m.TrainingManagementPageModule)
+  },
+
 
 
 

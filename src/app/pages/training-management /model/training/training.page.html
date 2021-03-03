@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/docmgnt"
+        (click)="closeModal()"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title  *ngIf="!data" id="top">Add Doc</ion-title>
+    <ion-title  *ngIf="data" id="top">Update Doc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+
+    <ion-row style="width:100%" style="justify-content: flex-end;padding: 10px 0px;">
+      <ion-button class="upload-img" (click)="selectImagefromMobille()">
+        Upload Image  &nbsp;&nbsp;<ion-icon  name="cloud-upload-sharp"></ion-icon>
+      </ion-button>
+
+       
+      </ion-row>
+      
+      
+      <div class="row">
+        
+        <div class="form-bg">
+          <form [formGroup]="noteForm" (ngSubmit)="createTraining(noteForm)">
+            <ion-item>
+              <ion-label> doc_name: </ion-label>
+              <ion-input type="text" placeholder="doc_name" formControlName="doc_name"></ion-input>
+            </ion-item>
+           
+            <img [src]="url">
+            <ion-item>
+                <ion-label>Folder : </ion-label>
+                <ion-select placeholder="Folder" formControlName="folder_id">
+                  <section  *ngFor="let folder of filder_list">
+                    <ion-select-option value="{{ folder._id }}">{{ folder.name }}</ion-select-option>
+                </section>
+                </ion-select>
+              </ion-item>
+                <br>
+                <ion-button *ngIf='!data' color="primary" type="submit" value="Save">Save</ion-button>
+                <ion-button *ngIf='data'  color="secondary"  type="button" value="Update" (click)="updateTraining(noteForm)">Update</ion-button>
+              </form>
+        </div>
+    </div>
+</div>
+</ion-content>

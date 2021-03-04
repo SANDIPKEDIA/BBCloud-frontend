@@ -48,12 +48,12 @@
     <p *ngIf="list.length == 0" class="noRecordsFound">No Records Found</p>
 
     <ion-item-options side="end">
-      <ion-item-option *ngIf="!item.isAccountActive" color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
+      <ion-item-option  color="primary" (click)="openEditCustomerModal(item)">
+        <span >Edit</span>
+      </ion-item-option>
+      <ion-item-option   color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
         <span >Delete</span>
       </ion-item-option>
-      <!-- <ion-item-option *ngIf="item.isAccountActive" color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
-        <span >Disable</span>
-      </ion-item-option> -->
 
     </ion-item-options>
 

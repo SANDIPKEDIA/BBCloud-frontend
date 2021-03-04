@@ -4,8 +4,8 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 export const environment = {
   production: false,
-  baseUrl:"//localhost:4000"
-  // baseUrl: "http://13.127.184.151:4500",
+  // baseUrl:"//localhost:4000"
+  baseUrl: "http://13.127.184.151:4500",
   // baseUrl:"http://a05a282e.ngrok.io"
 };
 

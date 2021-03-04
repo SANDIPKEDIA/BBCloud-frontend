@@ -1,0 +1,75 @@
+ 
+<ion-content>
+  <section class="header">
+    <div class="top-left">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="employee"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Git Details</ion-title>
+    </div>
+  </section>
+  <ion-card class="grid-box">
+    
+
+    <ion-col class="profile-img-box">
+      <!-- <img
+        class="user-img"
+        *ngIf="customerData.CustomerImage.length !== 0"
+        src="{{customerData.CustomerImage}}"
+      /> -->
+
+      <div
+        *ngIf="true"
+        [ngStyle]="{'opacity' : customerData.isAccountActive == false ? 0.4 : 1}"
+        class="centered"
+      >
+        {{customerData.label}}
+      </div>
+
+      <h6 *ngIf="customerData.repo_name">{{customerData.repo_name }}</h6>
+    </ion-col>
+  </ion-card>
+  <ion-card class="card-box">
+
+  <div class="row">
+    <div class="float-left">
+      <ion-label>Username</ion-label>
+      <ion-text *ngIf="customerData.username"
+        >{{customerData.username}}</ion-text
+      >
+      <ion-text *ngIf="!customerData.username"
+      >-</ion-text>
+    </div>
+  </div>
+ 
+  
+ 
+  
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Password</ion-label>
+        <ion-text *ngIf="customerData.password">{{customerData.password}}</ion-text>
+        <ion-text *ngIf="!customerData.password">-</ion-text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Url</ion-label>
+        <ion-text *ngIf="customerData.url">{{customerData.url}}</ion-text>
+        <ion-text *ngIf="!customerData.url">-</ion-text>
+      </div>
+    </div> 
+  
+
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Registration Date</ion-label>
+        <ion-text *ngIf="customerData.createdAt"
+          >{{customerData.createdAt | date: 'dd MMM yyyy'}}</ion-text>
+
+      </div>
+    </div>
+
+
+  </ion-card>
+</ion-content>

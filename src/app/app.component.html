@@ -112,13 +112,7 @@
                 Finance Management
               </ion-label>
             </ion-item>
-            <ion-item button routerLink="/prototype" routerLinkActive="selected" routerDirection="root"
-            detail="false">
-            <ion-icon slot="start" name="bookmarks-outline"></ion-icon>
-            <ion-label>
-              Prototype Management
-            </ion-label>
-          </ion-item>
+           
           <ion-item button routerLink="/customer" routerLinkActive="selected" routerDirection="root"
           detail="false">
           <ion-icon slot="start" name="people-outline"></ion-icon>
@@ -126,6 +120,30 @@
             Customer Management
           </ion-label>
         </ion-item>
+        <ion-item button routerLink="/customertouchpoint" routerLinkActive="selected" routerDirection="root"
+        detail="false">
+        <ion-icon slot="start" name="people-outline"></ion-icon>
+        <ion-label>
+          CustomerTouchPoint
+        </ion-label>
+
+      </ion-item>
+
+      <ion-item button routerLink="/department" routerLinkActive="selected" routerDirection="root"
+detail="false">
+<ion-icon slot="start" name="folder-outline"></ion-icon>
+<ion-label>
+  Department Management
+</ion-label>
+</ion-item>
+      <ion-item button routerLink="/docmgnt" routerLinkActive="selected" routerDirection="root"
+  detail="false">
+  <ion-icon slot="start" name="document-text-outline"></ion-icon>
+  <ion-label>
+    Doc Management
+  </ion-label>
+</ion-item>
+
         <ion-item button routerLink="/employee" routerLinkActive="selected" routerDirection="root"
           detail="false">
           <ion-icon slot="start" name="person-outline"></ion-icon>
@@ -133,48 +151,27 @@
             Employee Management
           </ion-label>
         </ion-item>
-        <ion-item button routerLink="/task" routerLinkActive="selected" routerDirection="root"
-        detail="false">
-        <ion-icon slot="start" name="checkbox-outline"></ion-icon>
-        <ion-label>
-          Task Management
-        </ion-label>
-      </ion-item>
-      <ion-item button routerLink="/department" routerLinkActive="selected" routerDirection="root"
-        detail="false">
-        <ion-icon slot="start" name="folder-outline"></ion-icon>
-        <ion-label>
-          Department Management
-        </ion-label>
-      </ion-item>
-      <ion-item button routerLink="/feedback" routerLinkActive="selected" routerDirection="root"
-      detail="false">
-      <ion-icon slot="start" name="receipt-outline"></ion-icon>
-      <ion-label>
-        Feedback Management
-      </ion-label>
-    </ion-item>
-    <ion-item button routerLink="/customertouchpoint" routerLinkActive="selected" routerDirection="root"
-    detail="false">
-    <ion-icon slot="start" name="people-outline"></ion-icon>
-    <ion-label>
-      CustomerTouchPoint
-    </ion-label>
-  </ion-item>
-  <ion-item button routerLink="/organisation" routerLinkActive="selected" routerDirection="root"
+        <ion-item button routerLink="/feature" routerLinkActive="selected" routerDirection="root"
   detail="false">
-  <ion-icon slot="start" name="color-filter-outline"></ion-icon>
+  <ion-icon slot="start" name="newspaper-outline"></ion-icon>
   <ion-label>
-    Organisation Management
+    Feature Management
   </ion-label>
 </ion-item>
-<ion-item button routerLink="/order" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="duplicate-outline"></ion-icon>
-  <ion-label>
-    Order Management
-  </ion-label>
+<ion-item button routerLink="/feedback" routerLinkActive="selected" routerDirection="root"
+detail="false">
+<ion-icon slot="start" name="receipt-outline"></ion-icon>
+<ion-label>
+  Feedback Management
+</ion-label>
+</ion-item><ion-item button routerLink="/git" routerLinkActive="selected" routerDirection="root"
+detail="false">
+<ion-icon slot="start" name="git-branch-outline"></ion-icon>
+<ion-label>
+  Git Management
+</ion-label>
 </ion-item>
+
 <ion-item button routerLink="/induction" routerLinkActive="selected" routerDirection="root"
   detail="false">
   <ion-icon slot="start" name="color-filter-outline"></ion-icon>
@@ -182,11 +179,11 @@
     Induction Management
   </ion-label>
 </ion-item>
-<ion-item button routerLink="/plan" routerLinkActive="selected" routerDirection="root"
+<ion-item button routerLink="/knowledgecenter" routerLinkActive="selected" routerDirection="root"
   detail="false">
-  <ion-icon slot="start" name="sync-circle-outline"></ion-icon>
+  <ion-icon slot="start" name="information-circle-outline"></ion-icon>
   <ion-label>
-    Plan Management
+    KnowledgeCenter Management
   </ion-label>
 </ion-item>
 <ion-item button routerLink="/marketing" routerLinkActive="selected" routerDirection="root"
@@ -196,20 +193,101 @@
     Marketing Management
   </ion-label>
 </ion-item>
-<ion-item button routerLink="/git" routerLinkActive="selected" routerDirection="root"
+<ion-item button routerLink="/meeting" routerLinkActive="selected" routerDirection="root"
   detail="false">
-  <ion-icon slot="start" name="git-branch-outline"></ion-icon>
+  <ion-icon slot="start" name="calendar-clear-outline"></ion-icon>
   <ion-label>
-    Git Management
+    Meeting
   </ion-label>
 </ion-item>
+<ion-item button routerLink="/notemgnt" routerLinkActive="selected" routerDirection="root"
+  detail="false">
+  <ion-icon slot="start" name="document-text-outline"></ion-icon>
+  <ion-label>
+    Note Management
+  </ion-label>
+</ion-item>
+<ion-item button routerLink="/organisation" routerLinkActive="selected" routerDirection="root"
+detail="false">
+<ion-icon slot="start" name="color-filter-outline"></ion-icon>
+<ion-label>
+  Organisation Management
+</ion-label>
+</ion-item>
+<ion-item button routerLink="/order" routerLinkActive="selected" routerDirection="root"
+detail="false">
+<ion-icon slot="start" name="duplicate-outline"></ion-icon>
+<ion-label>
+  Order Management
+</ion-label>
+</ion-item>
+<ion-item button routerLink="/plan" routerLinkActive="selected" routerDirection="root"
+  detail="false">
+  <ion-icon slot="start" name="sync-circle-outline"></ion-icon>
+  <ion-label>
+    Plan Management
+  </ion-label>
+</ion-item>
+
+
 <ion-item button routerLink="/project" routerLinkActive="selected" routerDirection="root"
   detail="false">
-  <ion-icon slot="start" name="code-working-outline"></ion-icon>
+  <ion-icon slot="start" name="disc-outline"></ion-icon>
   <ion-label>
     Project Management
   </ion-label>
 </ion-item>
+<ion-item button routerLink="/package" routerLinkActive="selected" routerDirection="root"
+  detail="false">
+  <ion-icon slot="start" name="folder-open-outline"></ion-icon>
+  <ion-label>
+    Package Management
+  </ion-label>
+</ion-item>
+<ion-item button routerLink="/prototype" routerLinkActive="selected" routerDirection="root"
+detail="false">
+<ion-icon slot="start" name="bookmarks-outline"></ion-icon>
+<ion-label>
+  Prototype Management
+</ion-label>
+</ion-item>
+
+        <ion-item button routerLink="/task" routerLinkActive="selected" routerDirection="root"
+        detail="false">
+        <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+        <ion-label>
+          Task Management
+        </ion-label>
+      </ion-item>
+      <ion-item button routerLink="/training" routerLinkActive="selected" routerDirection="root"
+  detail="false">
+  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
+  <ion-label>
+    Training Management
+  </ion-label>
+</ion-item>
+
+
+
+<ion-item button routerLink="/ticket" routerLinkActive="selected" routerDirection="root"
+  detail="false">
+  <ion-icon slot="start" name="ticket-outline"></ion-icon>
+    <ion-label>
+    Ticket Management
+  </ion-label>
+</ion-item>
+<ion-item button routerLink="/todo" routerLinkActive="selected" routerDirection="root"
+detail="false">
+<ion-icon slot="start" name="reorder-two-outline"></ion-icon>
+<ion-label>
+  Todo Management 
+</ion-label>
+</ion-item>
+     
+  
+ 
+
+
 <ion-item button routerLink="/vacancy" routerLinkActive="selected" routerDirection="root"
   detail="false">
   <ion-icon slot="start" name="person-add-outline"></ion-icon>
@@ -217,76 +295,18 @@
     Vacancy Management
   </ion-label>
 </ion-item>
-<ion-item button routerLink="/training" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    Training Management
-  </ion-label>
-</ion-item>
-<ion-item button routerLink="/package" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    Package Management
-  </ion-label>
-</ion-item>
-<ion-item button routerLink="/knowledgecenter" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    KnowledgeCenter Management
-  </ion-label>
-</ion-item>
-<ion-item button routerLink="/feature" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    Feature Management
-  </ion-label>
-</ion-item>
-<ion-item button routerLink="/ticket" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    Ticket Management
-  </ion-label>
-</ion-item>
+
 <ion-item button routerLink="/work" routerLinkActive="selected" routerDirection="root"
   detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
+  <ion-icon slot="start" name="code-working-outline"></ion-icon>
   <ion-label>
     Work 
   </ion-label>
 </ion-item>
-<ion-item button routerLink="/todo" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    Todo Management 
-  </ion-label>
-</ion-item>
-<ion-item button routerLink="/meeting" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    Meeting
-  </ion-label>
-</ion-item>
-<ion-item button routerLink="/notemgnt" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    Note Management
-  </ion-label>
-</ion-item>
-<ion-item button routerLink="/docmgnt" routerLinkActive="selected" routerDirection="root"
-  detail="false">
-  <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
-  <ion-label>
-    Doc Management
-  </ion-label>
-</ion-item>
+
+
+
+
           </ion-menu-toggle>
 
 

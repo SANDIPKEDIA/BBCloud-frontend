@@ -3,9 +3,9 @@
   <section class="header">
     <div class="top-left">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="employee"></ion-back-button>
+        <ion-back-button defaultHref="feedback"></ion-back-button>
       </ion-buttons>
-      <ion-title>Employee Details</ion-title>
+      <ion-title>Feedback Details</ion-title>
     </div>
   </section>
   <ion-card class="grid-box">
@@ -26,19 +26,19 @@
         {{customerData.label}}
       </div>
 
-      <h6 *ngIf="customerData.name">{{customerData.name }}</h6>
+      <h6 *ngIf="customerData.project">{{customerData.project}}</h6>
     </ion-col>
   </ion-card>
  
   <ion-card class="card-box">
     <div class="row">
       <div class="float-left">
-        <ion-label>Email Id</ion-label>
-        <ion-text *ngIf="customerData.email">{{customerData.email}}</ion-text>
-        <ion-text *ngIf="!customerData.email">-</ion-text>
+        <ion-label>Feedback</ion-label>
+        <ion-text *ngIf="customerData.feedback">{{customerData.feedback}}</ion-text>
+        <ion-text *ngIf="!customerData.feedback">-</ion-text>
       </div>
-    </div>
-    <div class="row">
+     </div>
+     <!-- <div class="row">
       <div class="float-left">
         <ion-label>Phone Number</ion-label>
         <ion-text *ngIf="customerData.mobile"
@@ -47,38 +47,38 @@
         <ion-text *ngIf="!customerData.mobile"
         >-</ion-text
       >
-      </div>
-    </div>
+      </div> 
+    </div>  -->
     <div class="row">
       <div class="float-left">
-        <ion-label>age</ion-label>
-        <ion-text *ngIf="customerData.age">{{customerData.age}}</ion-text>
-        <ion-text *ngIf="!customerData.age">-</ion-text>
+        <ion-label>Date</ion-label>
+        <ion-text *ngIf="customerData.date">{{customerData.date}}</ion-text>
+        <ion-text *ngIf="!customerData.date">-</ion-text>
       </div>
     </div>
 
-    <!-- <div class="row">
+    <div class="row">
       <div class="float-left">
-        <ion-label>Address</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.address}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">{{customerData.address}}</ion-text>
+        <ion-label>Submitted By</ion-label>
+        <ion-text *ngIf="customerData.submitted_by">{{customerData.submitted_by}}</ion-text>
+        <ion-text *ngIf="!customerData.submitted_by">{{customerData.submitted_by}}</ion-text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Raise By</ion-label>
+        <ion-text *ngIf="customerData.raise_by">{{customerData.raise_by}}</ion-text>
+        <ion-text *ngIf="!customerData.raise_by">{{customerData.raise_by}}</ion-text>
+      </div>
+    </div>
+<!--     
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Package Name</ion-label>
+        <ion-text *ngIf="customerData.gender">{{customerData.package}}</ion-text>
+        <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text>
       </div>
     </div> -->
-    <div class="row">
-      <div class="float-left">
-        <ion-label>Gender</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.gender}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">-</ion-text>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="float-left">
-        <ion-label>Position</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.position}}</ion-text>
-        <!-- <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text> -->
-      </div>
-    </div>
 
 
     <!-- <div class="row">
@@ -90,7 +90,7 @@
         <ion-text *ngIf="!customerData.dob">-</ion-text>
       </div>
     </div> -->
-    <!-- <div class="row">
+    <div class="row">
       <div class="float-left">
         <ion-label>Register From</ion-label>
         <ion-text *ngIf="customerData.isSocialLogin"
@@ -100,7 +100,7 @@
         >Mobile</ion-text
       >
       </div>
-    </div> -->
+    </div>
 
     <!-- <div class="row">
       <div class="float-left">

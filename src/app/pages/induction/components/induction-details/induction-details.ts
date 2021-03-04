@@ -6,11 +6,11 @@ import { IonInfiniteScroll } from "@ionic/angular";
 import { UsersService } from "../../../../users.service";
 
 @Component({
-  selector: "page-emp-details",
-  templateUrl: "emp-details.html",
-  styleUrls: ["./emp-details.scss"],
+  selector: "page-induction-details",
+  templateUrl: "induction-details.html",
+  styleUrls: ["./induction-details.scss"],
 })
-export class EmpDetailsPage implements OnInit {
+export class InductionDetailsPage implements OnInit {
   public customerData: any = {
     // fullName: "",
     // CustomerImage: "",
@@ -74,7 +74,7 @@ export class EmpDetailsPage implements OnInit {
 
   fetchCustomerDetails(customerId) {
     this._userServices
-      .getEmpDetails(customerId)
+      .getInductionDetails(customerId)
       .subscribe((results: any) => {
         this.customerData = results.response[0];
         // this.isToggled = this.customerData.isAccountActive;

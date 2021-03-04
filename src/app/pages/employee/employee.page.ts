@@ -40,6 +40,8 @@ export class EmployeePage implements OnInit {
       name: new FormControl(''),
       email: new FormControl(''),
       age: new FormControl(''),
+      gender: new FormControl(''),
+      mobile: new FormControl(''),
       department_id: new FormControl(''),
       position: new FormControl(''),
     });

@@ -6,21 +6,20 @@ import { IonInfiniteScroll } from "@ionic/angular";
 import { UsersService } from "../../../../users.service";
 
 @Component({
-  selector: "page-emp-details",
-  templateUrl: "emp-details.html",
-  styleUrls: ["./emp-details.scss"],
+  selector: "page-feedback-details",
+  templateUrl: "feedback-details.html",
+  styleUrls: ["./feedback-details.scss"],
 })
-export class EmpDetailsPage implements OnInit {
+export class FeedbackDetailsPage implements OnInit {
   public customerData: any = {
     // fullName: "",
     // CustomerImage: "",
-    email: "",
-    mobile: "",
-    age:"",
-    gender:"",
-    name:"",
-    city: "",
-    balance: 0,
+    // email: "",
+    // mobile: "",
+    // age:"",
+    // gender:"",
+    // city: "",
+    // balance: 0,
   };
 
   public isToggled: boolean;
@@ -74,7 +73,7 @@ export class EmpDetailsPage implements OnInit {
 
   fetchCustomerDetails(customerId) {
     this._userServices
-      .getEmpDetails(customerId)
+      .getFeedDetails(customerId)
       .subscribe((results: any) => {
         this.customerData = results.response[0];
         // this.isToggled = this.customerData.isAccountActive;

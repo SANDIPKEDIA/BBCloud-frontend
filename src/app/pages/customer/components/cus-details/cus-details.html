@@ -3,9 +3,9 @@
   <section class="header">
     <div class="top-left">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="employee"></ion-back-button>
+        <ion-back-button defaultHref="customers"></ion-back-button>
       </ion-buttons>
-      <ion-title>Employee Details</ion-title>
+      <ion-title>Customer Details</ion-title>
     </div>
   </section>
   <ion-card class="grid-box">
@@ -57,26 +57,26 @@
       </div>
     </div>
 
-    <!-- <div class="row">
+    <div class="row">
       <div class="float-left">
         <ion-label>Address</ion-label>
         <ion-text *ngIf="customerData.gender">{{customerData.address}}</ion-text>
         <ion-text *ngIf="!customerData.gender">{{customerData.address}}</ion-text>
       </div>
-    </div> -->
+    </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Gender</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.gender}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">-</ion-text>
+        <ion-label>Store Name</ion-label>
+        <ion-text *ngIf="customerData.gender">{{customerData.store_name}}</ion-text>
+        <ion-text *ngIf="!customerData.gender">{{customerData.store_name}}</ion-text>
       </div>
     </div>
     
     <div class="row">
       <div class="float-left">
-        <ion-label>Position</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.position}}</ion-text>
-        <!-- <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text> -->
+        <ion-label>Package Name</ion-label>
+        <ion-text *ngIf="customerData.gender">{{customerData.package}}</ion-text>
+        <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text>
       </div>
     </div>
 
@@ -90,7 +90,7 @@
         <ion-text *ngIf="!customerData.dob">-</ion-text>
       </div>
     </div> -->
-    <!-- <div class="row">
+    <div class="row">
       <div class="float-left">
         <ion-label>Register From</ion-label>
         <ion-text *ngIf="customerData.isSocialLogin"
@@ -100,7 +100,7 @@
         >Mobile</ion-text
       >
       </div>
-    </div> -->
+    </div>
 
     <!-- <div class="row">
       <div class="float-left">

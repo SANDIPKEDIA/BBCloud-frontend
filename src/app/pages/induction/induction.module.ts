@@ -11,6 +11,7 @@ import { InductionPage } from './induction.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditInductionPageModel } from "./model/induction/add-edit-induction.page";
+import { InductionDetailsPage  } from "./components/induction-details/induction-details";
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { AddEditInductionPageModel } from "./model/induction/add-edit-induction.
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [InductionPage, AddEditInductionPageModel],
+  declarations: [InductionPage, AddEditInductionPageModel,InductionDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditInductionPageModel]
 })

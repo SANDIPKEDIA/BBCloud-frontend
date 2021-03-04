@@ -12,6 +12,8 @@ import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditKnowledgeCenterPageModel } from "./model/knowledge/add-edit-knowledge.page";
 
+import { KnowledgeDetailsPage } from './components/knowledge-details/knowledge-details';
+
 
 @NgModule({
   imports: [
@@ -23,7 +25,7 @@ import { AddEditKnowledgeCenterPageModel } from "./model/knowledge/add-edit-know
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [KnowledgeCenterPage, AddEditKnowledgeCenterPageModel],
+  declarations: [KnowledgeCenterPage, AddEditKnowledgeCenterPageModel,KnowledgeDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditKnowledgeCenterPageModel]
 })

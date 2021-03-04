@@ -38,6 +38,8 @@ export class AddEditEmployeePageModel implements OnInit {
       age: new FormControl(''),
       departmentId: new FormControl(''),
       position: new FormControl(''),
+      gender: new FormControl(''),
+      mobile: new FormControl(''),
     });
 
     

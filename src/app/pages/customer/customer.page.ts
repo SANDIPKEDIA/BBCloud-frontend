@@ -45,6 +45,8 @@ export class CustomerPage implements OnInit {
       address: new FormControl(''),
       store_name: new FormControl(''),
       package: new FormControl(''),
+      email: new FormControl(''),
+
     });
   }
 

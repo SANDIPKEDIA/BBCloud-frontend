@@ -1,70 +1,70 @@
- 
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button style="color: white"></ion-menu-button>
+      <ion-menu-button  style="color: white;"></ion-menu-button>
+      
+        <!-- <ion-icon style="margin-left: 10px;font-size: 22px;"    name="arrow-back-outline"></ion-icon> -->
+      
     </ion-buttons>
-    <ion-title>Induction Management</ion-title>
-    
+    <ion-title>
+      Induction Management
+    </ion-title>
+    <ion-buttons slot="end" style="margin-right: 20px;" >
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+ <!-- <ion-searchbar #autofocus  *ngIf="showSearchBox"  spellcheck="true" placeholder="Search Customers" [(ngModel)]="searchWord" (ionChange)="search($event)"></ion-searchbar> -->
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
 
-<!-- <br> -->
-<!-- <h4 >&nbsp;&nbsp;&nbsp;Induction List</h4> -->
-<ion-list-header color="light">
-  <h4>
-  <ion-label>Induction List</ion-label>
-  </h4>
-</ion-list-header>
+<ion-list>
+  <ion-item-sliding id="item100" *ngFor="let item of list">
+    <ion-item [routerLink]="['/induction/induction-details/'+ item._id ]">
+       
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <img class="product-thumbnail" src="https://img.icons8.com/bubbles/2x/user-male.png">
+            <!-- {{item.label}} -->
+              
+          </ion-col>
+          <ion-col size="9">
+            <h6 class="product-name" *ngIf="item.emp_name">{{item.emp_name}}</h6>
+            <h6 class="product-name grey-color" *ngIf="!item.emp_name">N/A</h6>
+            <span class="tag-name">{{item.status}}</span>
+          </ion-col>
+          <!-- <ion-col size="1">
+            <ion-icon class="call-icon" name="call-outline"></ion-icon>
+          </ion-col> -->
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <p *ngIf="list.length == 0" class="noRecordsFound">No Records Found</p>
+
+    <ion-item-options side="end">
+      <ion-item-option *ngIf="!item.isAccountActive" color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
+        <span >Delete</span>
+      </ion-item-option>
+      <!-- <ion-item-option *ngIf="item.isAccountActive" color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
+        <span >Disable</span>
+      </ion-item-option> -->
+
+    </ion-item-options>
+
+  </ion-item-sliding>
+</ion-list>
 
 
-<ion-item-sliding id="item100" *ngFor="let item of list" >
-    
-  
-  <ion-item >
-    <!-- <ion-row>
-      <ion-col>{{ item.name }}</ion-col>
-      <ion-col>{{ item.mobile }}</ion-col> 
-      <ion-col>{{ item.age }}</ion-col> 
-      <ion-col>{{ item.address }}</ion-col> 
-      <ion-col>{{ item.store_name }}</ion-col> 
-      <ion-col>{{ item.package }}</ion-col>  -->
-      <ion-label>
-        <h2 ion-text color="primary">Employee Name : {{item.emp_name}}</h2>
-        <!-- <p>Employee Id : {{item.empId}}</p> -->
-        <p>Joining Date : {{item.joining_date}}</p>
-        <p>InductionCompleted : {{item.induction_completed_date}}</p>
-        <p>Status :  {{item.status}}</p>
-     
-      </ion-label>
-        
-    <!-- </ion-row> -->
-    <!-- <ion-row> -->
-      <!-- <ion-col style="font-size: 10px">{{ item.description }}</ion-col> -->
-      
-    <!-- </ion-row> -->
 
-    <!-- <div name="main" style="position:relative;display:grid;">
-      <p [class]="show?'showText':'hideText'">{{ item.name}}</p>
-      <div [class]="show?'showReadMore':'showReadLess'" (click)="displayText()">
-        {{show?'Less details':'More details'}}
-     </div>
-    </div>  -->
-    
-  </ion-item>
-  <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="openEditInductionModal(item)">
-      <ion-icon slot="icon-only" name="create"></ion-icon>
-    </ion-item-option>
-    <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
-      <ion-icon slot="icon-only" name="trash"></ion-icon>
-    </ion-item-option>
-  </ion-item-options>
-</ion-item-sliding>
 
+ 
+ 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
   <ion-fab-button (click)="openAddInductionModal()">
     <ion-icon name="add"></ion-icon>

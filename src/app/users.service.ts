@@ -47,6 +47,11 @@ export class UsersService {
     return this.http.post(url,body);
   }
 
+  getCusDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/getcusbyid/${id}`
+    return this.http.get(url);
+  }
   deleteCustomer(id)
   {
     let url=this.baseUrl + "/api/v1/deletecusmanage/"+id
@@ -151,6 +156,11 @@ getFeed()
   let url=this.baseUrl + "/api/v1/getallfeedmanage"
   return this.http.get(url);
 }
+getFeedDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/getfeedbyid/${id}`
+    return this.http.get(url);
+  }
 
 saveFeed(body)
 {
@@ -176,7 +186,11 @@ getCusT()
   let url=this.baseUrl + "/api/v1/getallcus"
   return this.http.get(url);
 }
-
+getCusTDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/GetcustouchpointById/${id}`
+    return this.http.get(url);
+  }
 saveCus(body)
 {
   let url=this.baseUrl + "/api/v1/CreateCus"
@@ -260,6 +274,12 @@ getInduction()
   let url=this.baseUrl + "/api/v1/getallInductionManagement"
   return this.http.get(url);
 }
+getInductionDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/getinductionbyid/${id}`
+    return this.http.get(url);
+  }
+
 
 saveInduction(body)
 {
@@ -338,6 +358,11 @@ getGit()
   let url=this.baseUrl + "/api/v1/getallgitmanage"
   return this.http.get(url);
 }
+getGitDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/getgitbyid/${id}`
+    return this.http.get(url);
+  }
 
 saveGit(body)
 {
@@ -472,6 +497,11 @@ getKnowledgeCenter()
   let url=this.baseUrl + "/api/v1/GetallCenterDetails"
   return this.http.get(url);
 }
+getknowledgeDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/GetCenterById/${id}`
+    return this.http.get(url);
+  }
 
 saveKnowledgeCenter(body)
 {  let url=this.baseUrl + "/api/v1/CreateCenter"

@@ -1,0 +1,78 @@
+ 
+<ion-content>
+  <section class="header">
+    <div class="top-left">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="employee"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Induction Details</ion-title>
+    </div>
+  </section>
+  <ion-card class="grid-box">
+    
+
+    <ion-col class="profile-img-box">
+      <!-- <img
+        class="user-img"
+        *ngIf="customerData.CustomerImage.length !== 0"
+        src="{{customerData.CustomerImage}}"
+      /> -->
+
+      <div
+        *ngIf="true"
+        [ngStyle]="{'opacity' : customerData.isAccountActive == false ? 0.4 : 1}"
+        class="centered"
+      >
+        {{customerData.label}}
+      </div>
+
+      <h6 *ngIf="customerData.emp_name">{{customerData.emp_name }}</h6>
+    </ion-col>
+  </ion-card>
+
+
+ 
+  <ion-card class="card-box">
+
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Status</ion-label>
+        <ion-text *ngIf="customerData.status">{{customerData.status}}</ion-text>
+        <ion-text *ngIf="!customerData.status">-</ion-text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Induction Complete Date</ion-label>
+        <ion-text *ngIf="customerData.induction_completed_date">{{customerData.induction_completed_date}}</ion-text>
+        <ion-text *ngIf="!customerData.induction_completed_date">-</ion-text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Joining Date</ion-label>
+        <ion-text *ngIf="customerData.joining_date"
+          >{{customerData.joining_date}}</ion-text
+        >
+        <ion-text *ngIf="!customerData.joining_date"
+        >-</ion-text
+      >
+      </div>
+    </div>
+   
+
+  
+
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Registration Date</ion-label>
+        <ion-text *ngIf="customerData.createdAt"
+          >{{customerData.createdAt | date: 'dd MMM yyyy'}}</ion-text
+        >
+
+      </div>
+    </div>
+
+
+  </ion-card>
+</ion-content>

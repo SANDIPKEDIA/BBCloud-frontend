@@ -11,6 +11,7 @@ import { GitPage } from './git.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditGitPageModel } from "./model/git/add-edit-git.page";
+import { GitDetailsPage  } from "./components/git-details/git-details";
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { AddEditGitPageModel } from "./model/git/add-edit-git.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [GitPage, AddEditGitPageModel],
+  declarations: [GitPage, AddEditGitPageModel,GitDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditGitPageModel]
 })

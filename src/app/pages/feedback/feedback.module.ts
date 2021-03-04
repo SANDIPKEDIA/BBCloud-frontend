@@ -11,6 +11,7 @@ import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditFeedbackPageModel } from "./model/feedback/add-edit-feedback.page";
 import { FeedbackPageRoutingModule } from './feedback-routing.module';
+import { FeedbackDetailsPage } from './components/feedback-details/feedback-details';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { FeedbackPageRoutingModule } from './feedback-routing.module';
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [FeedbackPage, AddEditFeedbackPageModel],
+  declarations: [FeedbackPage, AddEditFeedbackPageModel,FeedbackDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditFeedbackPageModel]
 })

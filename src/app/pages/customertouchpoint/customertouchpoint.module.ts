@@ -11,6 +11,7 @@ import { CustomertouchpointPage } from './customertouchpoint.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditCustomertouchpointPageModel } from "./model/customertouchpoint/add-edit-customertouchpoint.page";
+import { CusTDetailsPage  } from "./components/custouchpoint-details/custouchpoint-details";
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { AddEditCustomertouchpointPageModel } from "./model/customertouchpoint/a
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [CustomertouchpointPage, AddEditCustomertouchpointPageModel],
+  declarations: [CustomertouchpointPage, AddEditCustomertouchpointPageModel,CusTDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditCustomertouchpointPageModel]
 })

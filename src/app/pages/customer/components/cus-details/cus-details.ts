@@ -6,21 +6,20 @@ import { IonInfiniteScroll } from "@ionic/angular";
 import { UsersService } from "../../../../users.service";
 
 @Component({
-  selector: "page-emp-details",
-  templateUrl: "emp-details.html",
-  styleUrls: ["./emp-details.scss"],
+  selector: "page-cus-details",
+  templateUrl: "cus-details.html",
+  styleUrls: ["./cus-details.scss"],
 })
-export class EmpDetailsPage implements OnInit {
+export class CusDetailsPage implements OnInit {
   public customerData: any = {
     // fullName: "",
     // CustomerImage: "",
-    email: "",
-    mobile: "",
-    age:"",
-    gender:"",
-    name:"",
-    city: "",
-    balance: 0,
+    // email: "",
+    // mobile: "",
+    // age:"",
+    // gender:"",
+    // city: "",
+    // balance: 0,
   };
 
   public isToggled: boolean;
@@ -36,7 +35,7 @@ export class EmpDetailsPage implements OnInit {
   public updateStatus() {
     console.log("Toggled: " + this.isToggled);
     this._userServices
-      .editEmployee(this.customerData._id, {
+      .editCustomer(this.customerData._id, {
         isAccountActive: this.isToggled,
       })
       .subscribe(async (results: any) => {
@@ -74,7 +73,7 @@ export class EmpDetailsPage implements OnInit {
 
   fetchCustomerDetails(customerId) {
     this._userServices
-      .getEmpDetails(customerId)
+      .getCusDetails(customerId)
       .subscribe((results: any) => {
         this.customerData = results.response[0];
         // this.isToggled = this.customerData.isAccountActive;

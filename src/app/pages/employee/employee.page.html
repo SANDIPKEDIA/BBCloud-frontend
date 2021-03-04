@@ -22,9 +22,9 @@
 <ion-content [fullscreen]="true">
 
 
-<ion-list *ngIf="list.length != 0">
+<ion-list>
   <ion-item-sliding id="item100" *ngFor="let item of list">
-    <ion-item [routerLink]="['/employee/empdetails/'+ item._id ]">
+    <ion-item [routerLink]="['/employee/emp-details/'+ item._id ]">
        
       <ion-grid>
         <ion-row>
@@ -38,9 +38,9 @@
             <h6 class="product-name grey-color" *ngIf="!item.name">N/A</h6>
             <span class="tag-name">{{item.email}}</span>
           </ion-col>
-          <ion-col size="1">
+          <!-- <ion-col size="1">
             <ion-icon class="call-icon" name="call-outline"></ion-icon>
-          </ion-col>
+          </ion-col> -->
         </ion-row>
       </ion-grid>
     </ion-item>
@@ -48,12 +48,12 @@
     <p *ngIf="list.length == 0" class="noRecordsFound">No Records Found</p>
 
     <ion-item-options side="end">
-      <ion-item-option *ngIf="!item.isAccountActive" color="success" (click)="deleteAlertConfirm(item._id,item.isAccountActive)">
-        <span >Enable</span>
+      <ion-item-option *ngIf="!item.isAccountActive" color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
+        <span >Delete</span>
       </ion-item-option>
-      <ion-item-option *ngIf="item.isAccountActive" color="danger" (click)="deleteAlertConfirm(item._id,item.isAccountActive)">
+      <!-- <ion-item-option *ngIf="item.isAccountActive" color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
         <span >Disable</span>
-      </ion-item-option>
+      </ion-item-option> -->
 
     </ion-item-options>
 

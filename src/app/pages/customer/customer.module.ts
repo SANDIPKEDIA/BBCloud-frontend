@@ -11,6 +11,7 @@ import { CustomerPage } from './customer.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditCustomerPageModel } from "./model/customer/add-edit-customer.page";
+import {CusDetailsPage} from "./components/cus-details/cus-details";
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { AddEditCustomerPageModel } from "./model/customer/add-edit-customer.pag
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [CustomerPage, AddEditCustomerPageModel],
+  declarations: [CustomerPage, AddEditCustomerPageModel,CusDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditCustomerPageModel]
 })

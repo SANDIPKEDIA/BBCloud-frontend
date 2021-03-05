@@ -5,7 +5,7 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="employee"></ion-back-button>
       </ion-buttons>
-      <ion-title>Knowledge Details</ion-title>
+      <ion-title>Meeting Details</ion-title>
     </div>
   </section>
   <!-- <ion-card class="grid-box"> -->
@@ -33,53 +33,63 @@
   <ion-card class="card-box">
     <div class="row">
       <div class="float-left">
-        <ion-label>Title</ion-label>
-        <ion-text *ngIf="customerData.title">{{customerData.title}}</ion-text>
-        <ion-text *ngIf="!customerData.title">-</ion-text>
+        <ion-label>Meeting Name</ion-label>
+        <ion-text *ngIf="customerData.meeting_name">{{customerData.meeting_name}}</ion-text>
+        <ion-text *ngIf="!customerData.meeting_name">-</ion-text>
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Content</ion-label>
-        <ion-text *ngIf="customerData.content"
-          >{{customerData.content}}</ion-text
+        <ion-label>Url</ion-label>
+        <ion-text *ngIf="customerData.url"
+          >{{customerData.url}}</ion-text
         >
-        <ion-text *ngIf="!customerData.content"
+        <ion-text *ngIf="!customerData.url"
         >-</ion-text
       >
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Attachments</ion-label>
-        <ion-text *ngIf="customerData.attachments">{{customerData.attachments}}</ion-text>
-        <ion-text *ngIf="!customerData.attachments">-</ion-text>
+        <ion-label>description</ion-label>
+        <ion-text *ngIf="customerData.description">{{customerData.description}}</ion-text>
+        <ion-text *ngIf="!customerData.description">-</ion-text>
       </div>
     </div>
 
     <div class="row">
       <div class="float-left">
-        <ion-label>Notes</ion-label>
-        <ion-text *ngIf="customerData.notes">{{customerData.notes}}</ion-text>
-        <ion-text *ngIf="!customerData.notes">{{customerData.notes}}</ion-text>
+        <ion-label>comments</ion-label>
+        <ion-text *ngIf="customerData.comments">{{customerData.comments}}</ion-text>
+        <ion-text *ngIf="!customerData.comments">{{customerData.comments}}</ion-text>
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Tags</ion-label>
-        <ion-text *ngIf="customerData.tags">{{customerData.tags}}</ion-text>
-        <ion-text *ngIf="!customerData.tags">-</ion-text>
+        <ion-label>time</ion-label>
+        <ion-text *ngIf="customerData.time">{{customerData.time}}</ion-text>
+        <ion-text *ngIf="!customerData.time">-</ion-text>
       </div>
     </div>
     
     <div class="row">
       <div class="float-left">
-        <ion-label>Date</ion-label>
+        <ion-label> joiness</ion-label>
+        <ion-text *ngIf="customerData.joiness">{{customerData.joiness}}</ion-text>
+        <ion-text *ngIf="!customerData.joiness">-</ion-text>
+        <!-- <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="float-left">
+        <ion-label> date</ion-label>
         <ion-text *ngIf="customerData.date">{{customerData.date}}</ion-text>
         <ion-text *ngIf="!customerData.date">-</ion-text>
         <!-- <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text> -->
       </div>
     </div>
+   
 
 
     <!-- <div class="row">

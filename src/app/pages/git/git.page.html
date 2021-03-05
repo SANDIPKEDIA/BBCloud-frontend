@@ -29,7 +29,7 @@
       <ion-grid>
         <ion-row>
           <ion-col size="2">
-            <img class="product-thumbnail" src="https://img.icons8.com/bubbles/2x/user-male.png">
+            <img class="product-thumbnail" src="https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1614968860~hmac=44d5266445de814821a2a1d2d98a268c">
             <!-- {{item.label}} -->
               
           </ion-col>
@@ -48,12 +48,12 @@
     <p *ngIf="list.length == 0" class="noRecordsFound">No Records Found</p>
 
     <ion-item-options side="end">
-      <ion-item-option *ngIf="!item.isAccountActive" color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
-        <span >Delete</span>
+      <ion-item-option color="warning" (click)="openEditGitModal(item)">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
       </ion-item-option>
-      <!-- <ion-item-option *ngIf="item.isAccountActive" color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
-        <span >Disable</span>
-      </ion-item-option> -->
+      <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
 
     </ion-item-options>
 

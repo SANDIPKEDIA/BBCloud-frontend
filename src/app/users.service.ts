@@ -295,7 +295,7 @@ deleteInduction(id)
 
 editInduction(body,id)
 {
-  let url=this.baseUrl + "/api/v1/editPlanManagement/"+id
+  let url=this.baseUrl + "/api/v1/editInductionManagement/"+id
   return this.http.put(url,body);
 }
 
@@ -332,6 +332,11 @@ getMarketing()
   let url=this.baseUrl + "/api/v1/getallMarketingManagement"
   return this.http.get(url);
 }
+getMarketingDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/Getmarketbyid/${id}`
+    return this.http.get(url);
+  }
 
 saveMarketing(body)
 {
@@ -632,6 +637,11 @@ getMeeting()
   return this.http.get(url);
 }
 
+getMeetingDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/GetmeetingById/${id}`
+    return this.http.get(url);
+  }
 saveMeeting(body)
 {  let url=this.baseUrl + "/api/v1/createmeeting"
   return this.http.post(url,body);

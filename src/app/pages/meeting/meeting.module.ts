@@ -11,6 +11,8 @@ import { MeetingPage } from './meeting.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditMeetingPageModel } from "./model/meeting/add-edit-meeting.page";
+import {MeetingDetailsPage} from "./components/meeting-details/meeting-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditMeetingPageModel } from "./model/meeting/add-edit-meeting.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [MeetingPage, AddEditMeetingPageModel],
+  declarations: [MeetingPage, AddEditMeetingPageModel,MeetingDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditMeetingPageModel]
 })

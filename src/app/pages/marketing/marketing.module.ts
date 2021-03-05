@@ -11,6 +11,8 @@ import { MarketingPage } from './marketing.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditMarketingPageModel } from "./model/marketing/add-edit-marketing.page";
+import {MarketingDetailsPage} from "./components/marketing-details/marketing-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditMarketingPageModel } from "./model/marketing/add-edit-marketing.
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [MarketingPage, AddEditMarketingPageModel],
+  declarations: [MarketingPage, AddEditMarketingPageModel,MarketingDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditMarketingPageModel]
 })

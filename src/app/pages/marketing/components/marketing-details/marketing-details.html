@@ -5,7 +5,7 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="employee"></ion-back-button>
       </ion-buttons>
-      <ion-title>Knowledge Details</ion-title>
+      <ion-title>Marketing Details</ion-title>
     </div>
   </section>
   <!-- <ion-card class="grid-box"> -->
@@ -33,50 +33,67 @@
   <ion-card class="card-box">
     <div class="row">
       <div class="float-left">
-        <ion-label>Title</ion-label>
-        <ion-text *ngIf="customerData.title">{{customerData.title}}</ion-text>
-        <ion-text *ngIf="!customerData.title">-</ion-text>
+        <ion-label>Advertisement Name</ion-label>
+        <ion-text *ngIf="customerData.advertisement_name">{{customerData.advertisement_name}}</ion-text>
+        <ion-text *ngIf="!customerData.advertisement_name">-</ion-text>
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Content</ion-label>
-        <ion-text *ngIf="customerData.content"
-          >{{customerData.content}}</ion-text
+        <ion-label>isOnline</ion-label>
+        <ion-text *ngIf="customerData.isOnline"
+          >{{customerData.isOnline}}</ion-text
         >
-        <ion-text *ngIf="!customerData.content"
+        <ion-text *ngIf="!customerData.isOnline"
         >-</ion-text
       >
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Attachments</ion-label>
-        <ion-text *ngIf="customerData.attachments">{{customerData.attachments}}</ion-text>
-        <ion-text *ngIf="!customerData.attachments">-</ion-text>
+        <ion-label>Platform</ion-label>
+        <ion-text *ngIf="customerData.platform">{{customerData.platform}}</ion-text>
+        <ion-text *ngIf="!customerData.platform">-</ion-text>
       </div>
     </div>
 
     <div class="row">
       <div class="float-left">
-        <ion-label>Notes</ion-label>
-        <ion-text *ngIf="customerData.notes">{{customerData.notes}}</ion-text>
-        <ion-text *ngIf="!customerData.notes">{{customerData.notes}}</ion-text>
+        <ion-label>Description</ion-label>
+        <ion-text *ngIf="customerData.description">{{customerData.description}}</ion-text>
+        <ion-text *ngIf="!customerData.description">{{customerData.description}}</ion-text>
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Tags</ion-label>
-        <ion-text *ngIf="customerData.tags">{{customerData.tags}}</ion-text>
-        <ion-text *ngIf="!customerData.tags">-</ion-text>
+        <ion-label>ResultfileId</ion-label>
+        <ion-text *ngIf="customerData.resultfileId">{{customerData.resultfileId}}</ion-text>
+        <ion-text *ngIf="!customerData.resultfileId">-</ion-text>
       </div>
     </div>
     
     <div class="row">
       <div class="float-left">
-        <ion-label>Date</ion-label>
-        <ion-text *ngIf="customerData.date">{{customerData.date}}</ion-text>
-        <ion-text *ngIf="!customerData.date">-</ion-text>
+        <ion-label> StartDate</ion-label>
+        <ion-text *ngIf="customerData.start_date">{{customerData.start_date}}</ion-text>
+        <ion-text *ngIf="!customerData.start_date">-</ion-text>
+        <!-- <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="float-left">
+        <ion-label> EndDate</ion-label>
+        <ion-text *ngIf="customerData.end_date">{{customerData.end_date}}</ion-text>
+        <ion-text *ngIf="!customerData.end_date">-</ion-text>
+        <!-- <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="float-left">
+        <ion-label> Benifits Comments</ion-label>
+        <ion-text *ngIf="customerData.benifits_comments">{{customerData.benifits_comments}}</ion-text>
+        <ion-text *ngIf="!customerData.benifits_comments">-</ion-text>
         <!-- <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text> -->
       </div>
     </div>

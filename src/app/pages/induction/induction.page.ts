@@ -145,7 +145,7 @@ export class InductionPage implements OnInit {
     });
     return await modal.present();
   }
-  displayText() {
+  displayText(){
     this.show = !this.show
   }
   

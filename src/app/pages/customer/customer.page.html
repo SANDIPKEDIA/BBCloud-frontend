@@ -29,7 +29,7 @@
       <ion-grid>
         <ion-row>
           <ion-col size="2">
-            <img class="product-thumbnail" src="https://img.icons8.com/bubbles/2x/user-male.png">
+            <img class="product-thumbnail" src="https://www.emmegi.co.uk/wp-content/uploads/2019/01/User-Icon.jpg">
             <!-- {{item.label}} -->
               
           </ion-col>
@@ -48,12 +48,18 @@
     <p *ngIf="list.length == 0" class="noRecordsFound">No Records Found</p>
 
     <ion-item-options side="end">
-      <ion-item-option  color="primary" (click)="openEditCustomerModal(item)">
+      <ion-item-option color="warning" (click)="openEditCustomerModal(item)">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-item-option>
+      <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+      <!-- <ion-item-option  color="primary" (click)="openEditCustomerModal(item)">
         <span >Edit</span>
       </ion-item-option>
       <ion-item-option   color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
         <span >Delete</span>
-      </ion-item-option>
+      </ion-item-option> -->
 
     </ion-item-options>
 

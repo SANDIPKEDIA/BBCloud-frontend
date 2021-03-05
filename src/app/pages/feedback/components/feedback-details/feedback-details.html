@@ -8,29 +8,15 @@
       <ion-title>Feedback Details</ion-title>
     </div>
   </section>
-  <ion-card class="grid-box">
-    
-
-    <ion-col class="profile-img-box">
-      <!-- <img
-        class="user-img"
-        *ngIf="customerData.CustomerImage.length !== 0"
-        src="{{customerData.CustomerImage}}"
-      /> -->
-
-      <div
-        *ngIf="true"
-        [ngStyle]="{'opacity' : customerData.isAccountActive == false ? 0.4 : 1}"
-        class="centered"
-      >
-        {{customerData.label}}
-      </div>
-
-      <h6 *ngIf="customerData.project">{{customerData.project}}</h6>
-    </ion-col>
-  </ion-card>
  
   <ion-card class="card-box">
+    <div class="row">
+      <div class="float-left">
+        <ion-label>project</ion-label>
+        <ion-text *ngIf="customerData.project">{{customerData.project}}</ion-text>
+        <ion-text *ngIf="!customerData.project">-</ion-text>
+      </div>
+     </div>
     <div class="row">
       <div class="float-left">
         <ion-label>Feedback</ion-label>

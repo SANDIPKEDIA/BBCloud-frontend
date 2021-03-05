@@ -11,6 +11,8 @@ import { OrderPage } from './order.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditOrderPageModel } from "./model/order/add-edit-order.page";
+import { OrderDetailsPage } from '../orders/components/order-details/order-details';
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditOrderPageModel } from "./model/order/add-edit-order.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [OrderPage, AddEditOrderPageModel],
+  declarations: [OrderPage, AddEditOrderPageModel,OrderDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditOrderPageModel]
 })

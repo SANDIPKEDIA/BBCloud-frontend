@@ -11,6 +11,8 @@ import { OrganisationPage } from './organisation.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditOrganisationPageModel } from "./model/organisation/add-edit-organisation.page";
+import {OrganisationDetailsPage} from "./component/organisation-details/organisation-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditOrganisationPageModel } from "./model/organisation/add-edit-orga
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [OrganisationPage, AddEditOrganisationPageModel],
+  declarations: [OrganisationPage, AddEditOrganisationPageModel,OrganisationDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditOrganisationPageModel]
 })

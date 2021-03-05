@@ -219,7 +219,11 @@ getOrg()
   let url=this.baseUrl + "/api/v1/getallorg"
   return this.http.get(url);
 }
-
+getOrganisationDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/getorganisationbyid/${id}`
+    return this.http.get(url);
+  }
 saveOrg(body)
 {
   let url=this.baseUrl + "/api/v1/createorg"
@@ -244,6 +248,11 @@ editOrg(body,id)
 getOrder()
 {
   let url=this.baseUrl + "/api/v1/getallorder"
+  return this.http.get(url);
+}
+getOrderDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/getorderbyid/${id}`
   return this.http.get(url);
 }
 

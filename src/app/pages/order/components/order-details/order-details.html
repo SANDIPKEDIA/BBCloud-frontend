@@ -3,69 +3,85 @@
   <section class="header">
     <div class="top-left">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="customers"></ion-back-button>
+        <ion-back-button defaultHref="employee"></ion-back-button>
       </ion-buttons>
-      <ion-title>Customer Details</ion-title>
+      <ion-title>Order Details</ion-title>
     </div>
   </section>
-  
+  <!-- <ion-card class="grid-box"> -->
+    
+
+    <!-- <ion-col class="profile-img-box"> -->
+      <!-- <img
+        class="user-img"
+        *ngIf="customerData.CustomerImage.length !== 0"
+        src="{{customerData.CustomerImage}}"
+      /> -->
+
+      <!-- <div
+        *ngIf="true"
+        [ngStyle]="{'opacity' : customerData.isAccountActive == false ? 0.4 : 1}"
+        class="centered"
+      >
+        {{customerData.label}}
+      </div>
+
+      <h6 *ngIf="customerData.name">{{customerData.name }}</h6>
+    </ion-col>
+  </ion-card> -->
  
   <ion-card class="card-box">
     <div class="row">
       <div class="float-left">
-        <ion-label>Customer Name</ion-label>
+        <ion-label>Name</ion-label>
         <ion-text *ngIf="customerData.name">{{customerData.name}}</ion-text>
         <ion-text *ngIf="!customerData.name">-</ion-text>
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Email Id</ion-label>
-        <ion-text *ngIf="customerData.email">{{customerData.email}}</ion-text>
-        <ion-text *ngIf="!customerData.email">-</ion-text>
-      </div>
-    </div>
-    <div class="row">
-      <div class="float-left">
-        <ion-label>Phone Number</ion-label>
-        <ion-text *ngIf="customerData.mobile"
-          >+91&nbsp;{{customerData.mobile}}</ion-text
+        <ion-label>Store Name</ion-label>
+        <ion-text *ngIf="customerData.store_name"
+          >{{customerData.store_name}}</ion-text
         >
-        <ion-text *ngIf="!customerData.mobile"
+        <ion-text *ngIf="!customerData.store_name"
         >-</ion-text
       >
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>age</ion-label>
-        <ion-text *ngIf="customerData.age">{{customerData.age}}</ion-text>
-        <ion-text *ngIf="!customerData.age">-</ion-text>
+        <ion-label>Contact</ion-label>
+        <ion-text *ngIf="customerData.contact">{{customerData.contact}}</ion-text>
+        <ion-text *ngIf="!customerData.contact">-</ion-text>
       </div>
     </div>
 
     <div class="row">
       <div class="float-left">
         <ion-label>Address</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.address}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">{{customerData.address}}</ion-text>
+        <ion-text *ngIf="customerData.address">{{customerData.address}}</ion-text>
+        <ion-text *ngIf="!customerData.address">-</ion-text>
       </div>
     </div>
     <div class="row">
       <div class="float-left">
-        <ion-label>Store Name</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.store_name}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">{{customerData.store_name}}</ion-text>
+        <ion-label>Comments</ion-label>
+        <ion-text *ngIf="customerData.comments">{{customerData.comments}}</ion-text>
+        <ion-text *ngIf="!customerData.comments">-</ion-text>
       </div>
     </div>
     
     <div class="row">
       <div class="float-left">
-        <ion-label>Package Name</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.package}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text>
+        <ion-label>Date</ion-label>
+        <ion-text *ngIf="customerData.date">{{customerData.date}}</ion-text>
+        <ion-text *ngIf="!customerData.date">-</ion-text>
+        <!-- <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text> -->
       </div>
     </div>
+
+    
 
 
     <!-- <div class="row">
@@ -77,7 +93,7 @@
         <ion-text *ngIf="!customerData.dob">-</ion-text>
       </div>
     </div> -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="float-left">
         <ion-label>Register From</ion-label>
         <ion-text *ngIf="customerData.isSocialLogin"
@@ -87,7 +103,7 @@
         >Mobile</ion-text
       >
       </div>
-    </div>
+    </div> -->
 
     <!-- <div class="row">
       <div class="float-left">

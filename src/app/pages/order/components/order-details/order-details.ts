@@ -10,7 +10,7 @@ import { UsersService } from "../../../../users.service";
   templateUrl: "order-details.html",
   styleUrls: ["./order-details.scss"],
 })
-export class OrderDetailsPage implements OnInit {
+export class OrdDetailsPage implements OnInit {
   public customerData: any = {
     // fullName: "",
     // CustomerImage: "",

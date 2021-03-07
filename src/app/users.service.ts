@@ -17,6 +17,11 @@ export class UsersService {
     let url=this.baseUrl + "/api/v1/getallprototype"
     return this.http.get(url);
   }
+  getPrototypeDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/getprototypebyid/${id}`
+  return this.http.get(url);
+}
 
   savePrototype(body)
   {
@@ -103,6 +108,12 @@ export class UsersService {
     let url=this.baseUrl + "/api/v1/getalltaskmanagement"
     return this.http.get(url);
   }
+  getTaskDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/gettaskbyid/${id}`
+    return this.http.get(url);
+  }
+  
 
   saveTask(body)
   {
@@ -315,7 +326,11 @@ getPlan()
   let url=this.baseUrl + "/api/v1/getallPlanManagement"
   return this.http.get(url);
 }
-
+getPlanDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/getplanbyid/${id}`
+  return this.http.get(url);
+}
 savePlan(body)
 {
   let url=this.baseUrl + "/api/v1/createPlanManagement"
@@ -433,6 +448,11 @@ getVacancy()
   let url=this.baseUrl + "/api/v1/getallVacancyManagement"
   return this.http.get(url);
 }
+getVacancyDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/getvacancybyid/${id}`
+  return this.http.get(url);
+}
 
 saveVacancy(body)
 {  let url=this.baseUrl + "/api/v1/createVacancyManagement"
@@ -457,6 +477,11 @@ editVacancy(body,id)
 getTraining()
 {
   let url=this.baseUrl + "/api/v1/alltraining"
+  return this.http.get(url);
+}
+getTrainingDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/gettrainingbyid/${id}`
   return this.http.get(url);
 }
 
@@ -484,6 +509,11 @@ editTraining(body,id)
 getPackage()
 {
   let url=this.baseUrl + "/api/v1/GetallPkg"
+  return this.http.get(url);
+}
+getPackageDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/getpackagebyid/${id}`
   return this.http.get(url);
 }
 
@@ -567,6 +597,11 @@ getTicket()
   let url=this.baseUrl + "/api/v1/GetallTicketDetails"
   return this.http.get(url);
 }
+getTicketDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/getticketbyid/${id}`
+  return this.http.get(url);
+}
 
 saveTicket(body)
 {  let url=this.baseUrl + "/api/v1/CreateTicket"
@@ -590,6 +625,11 @@ editTicket(body,id)
 getWork()
 {
   let url=this.baseUrl + "/api/v1/getallwork"
+  return this.http.get(url);
+}
+getWorkDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/getworkbyid/${id}`
   return this.http.get(url);
 }
 
@@ -616,6 +656,11 @@ editWork(body,id)
 getTodo()
 {
   let url=this.baseUrl + "/api/v1/getalltodo"
+  return this.http.get(url);
+}
+getTodoDetails(id)
+{
+  let url=this.baseUrl + `/api/v1/gettodobyid/${id}`
   return this.http.get(url);
 }
 
@@ -665,6 +710,40 @@ deleteMeeting(id)
 editMeeting(body,id)
 {
   let url=this.baseUrl + "/api/v1/editmeeting/"+id
+  return this.http.put(url,body);
+}
+
+
+//User
+
+
+
+
+getUser()
+{
+  let url=this.baseUrl + "/api/v1/getalluser"
+  return this.http.get(url);
+}
+
+getUserDetails(id)
+  {
+    let url=this.baseUrl + `/api/v1/GetuserById/${id}`
+    return this.http.get(url);
+  }
+saveUser(body)
+{  let url=this.baseUrl + "/api/v1/Createuser"
+  return this.http.post(url,body);
+}
+
+deleteUser(id)
+{
+  let url=this.baseUrl + "/api/v1/deleteuser/"+id
+  return this.http.delete(url);
+}
+
+editUser(body,id)
+{
+  let url=this.baseUrl + "/api/v1/edituser/"+id
   return this.http.put(url,body);
 }
 

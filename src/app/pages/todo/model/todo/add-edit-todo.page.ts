@@ -14,7 +14,7 @@ export class AddEditTodoPageModel implements OnInit {
   isShow: boolean = false;
   isOn: boolean;
   editUserId;
-  // public prototypeList=[];
+  public userList=[];
   formData;
   // public arr:any=[];
   
@@ -33,11 +33,11 @@ export class AddEditTodoPageModel implements OnInit {
   }
 
   ngOnInit() {
-    // this.getProtoype();
+    this.getUser();
     this.myReactiveForm = new FormGroup({
       id:new FormControl(''),
       task_name: new FormControl(''),
-      userId: new FormControl('602fe83559d91e102820ec0i'),
+      userId: new FormControl(''),
       incompleted_task: new FormControl(''),
       priority: new FormControl(),
       date: new FormControl(''),
@@ -91,12 +91,12 @@ export class AddEditTodoPageModel implements OnInit {
       this.presentToast("Todo Updated");
     });
   }
-  // getProtoype() {
-  //   this.user.getData().subscribe((result) => {
-  //     console.log("Project result", result);
-  //     this.prototypeList = result["response"];
-  //   });
-  // }
+  getUser() {
+    this.user.getUser().subscribe((result) => {
+      console.log("User result", result);
+      this.userList = result["response"];
+    });
+  }
 
 
 

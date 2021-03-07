@@ -11,6 +11,8 @@ import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditTaskPageModel } from "./model/task/add-edit-task.page";
 import { TaskPageRoutingModule } from './task-routing.module';
+import {TaskDetailsPage} from "./components/task-details/task-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { TaskPageRoutingModule } from './task-routing.module';
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [TaskPage, AddEditTaskPageModel],
+  declarations: [TaskPage, AddEditTaskPageModel,TaskDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditTaskPageModel]
 })

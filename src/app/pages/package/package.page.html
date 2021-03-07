@@ -1,74 +1,71 @@
- 
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button style="color: white"></ion-menu-button>
+      <ion-menu-button  style="color: white;"></ion-menu-button>
+      
+        <!-- <ion-icon style="margin-left: 10px;font-size: 22px;"    name="arrow-back-outline"></ion-icon> -->
+      
     </ion-buttons>
-    <ion-title>Package Management</ion-title>
-    
+    <ion-title>
+      Package Management
+    </ion-title>
+    <ion-buttons slot="end" style="margin-right: 20px;" >
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+ <!-- <ion-searchbar #autofocus  *ngIf="showSearchBox"  spellcheck="true" placeholder="Search Customers" [(ngModel)]="searchWord" (ionChange)="search($event)"></ion-searchbar> -->
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
 
-<!-- <br> -->
-<!-- <h4 >&nbsp;&nbsp;&nbsp;Induction List</h4> -->
-<ion-list-header color="light">
-  <h4>
-  <ion-label>Package List</ion-label>
-  </h4>
-</ion-list-header>
+<ion-list>
+  <ion-item-sliding id="item100" *ngFor="let item of list">
+    <ion-item [routerLink]="['/package/package-details/'+ item._id ]">
+       
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <img class="product-thumbnail" src="data:image/png;base64,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">
+            <!-- {{item.label}} -->
+              
+          </ion-col>
+          <ion-col size="9">
+            <h6 class="product-name" *ngIf="item.name">{{item.name}}</h6>
+            <h6 class="product-name grey-color" *ngIf="!item.name">N/A</h6>
+            <span class="tag-name">{{item.tags}}</span>
+          </ion-col>
+          <!-- <ion-col size="1">
+            <ion-icon class="call-icon" name="call-outline"></ion-icon>
+          </ion-col> -->
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <p *ngIf="list.length == 0" class="noRecordsFound">No Records Found</p>
+
+    <ion-item-options side="end">
+      <ion-item-option color="warning" (click)="openEditPackageModal(item)">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-item-option>
+      <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
 
 
-<ion-item-sliding id="item100" *ngFor="let item of list" >
-    
-  
-  <ion-item >
-    <!-- <ion-row>
-      <ion-col>{{ item.name }}</ion-col>
-      <ion-col>{{ item.mobile }}</ion-col> 
-      <ion-col>{{ item.age }}</ion-col> 
-      <ion-col>{{ item.address }}</ion-col> 
-      <ion-col>{{ item.store_name }}</ion-col> 
-      <ion-col>{{ item.package }}</ion-col>  -->
-      <ion-label>
-        <h2 ion-text color="primary">Name : {{item.name}}</h2>
-        <p>Details : {{item.details}}</p>
-        <p>Price : {{item.price}}</p>
-        <p>Tags : {{item.tags}}</p>
-      
+    </ion-item-options>
+
+  </ion-item-sliding>
+</ion-list>
 
 
-      
-        
-     
-      </ion-label>
-        
-    <!-- </ion-row> -->
-    <!-- <ion-row> -->
-      <!-- <ion-col style="font-size: 10px">{{ item.description }}</ion-col> -->
-      
-    <!-- </ion-row> -->
 
-    <!-- <div name="main" style="position:relative;display:grid;">
-      <p [class]="show?'showText':'hideText'">{{ item.name}}</p>
-      <div [class]="show?'showReadMore':'showReadLess'" (click)="displayText()">
-        {{show?'Less details':'More details'}}
-     </div>
-    </div>  -->
-    
-  </ion-item>
-  <ion-item-options side="end">
-    <ion-item-option color="warning" (click)="openEditPackageModal(item)">
-      <ion-icon slot="icon-only" name="create"></ion-icon>
-    </ion-item-option>
-    <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
-      <ion-icon slot="icon-only" name="trash"></ion-icon>
-    </ion-item-option>
-  </ion-item-options>
-</ion-item-sliding>
 
+ 
+ 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
   <ion-fab-button (click)="openAddPackageModal()">
     <ion-icon name="add"></ion-icon>

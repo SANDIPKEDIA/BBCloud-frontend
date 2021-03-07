@@ -11,6 +11,8 @@ import { TicketPage } from './ticket.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditTicketPageModel } from "./model/ticket/add-edit-ticket.page";
+import {TicketDetailsPage} from "./components/ticket-details/ticket-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditTicketPageModel } from "./model/ticket/add-edit-ticket.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [TicketPage, AddEditTicketPageModel],
+  declarations: [TicketPage, AddEditTicketPageModel,TicketDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditTicketPageModel]
 })

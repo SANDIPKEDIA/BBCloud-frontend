@@ -30,20 +30,18 @@
     </div>
     <br>
     <div class="form-group">
+
       <ion-item>
-      <ion-input
-      type="text"
-      class="form-control"
-      id="userId"
-      autocomplete="off"
-      formControlName="userId"
-      placeholder="Enter UserId"
-    >
-  
-      </ion-input>
-</ion-item>
-</div>
-<br>
+        <ion-label>User :</ion-label>
+        <ion-select  placeholder="User id" formControlName="userId">
+          <section>
+            <ion-select-option [value]="list._id" *ngFor="let list of userList">{{list.fullName}}</ion-select-option>
+        </section>
+        </ion-select>
+      </ion-item>
+    
+    </div>
+    <br>
 
     <div class="form-group">
       <ion-item>

@@ -46,20 +46,18 @@
       <br>
       <div class="form-group">
         <ion-item>
-              <ion-input
-              type="text"
-              class="form-control"
-              id="gender"
-              autocomplete="off"
-              formControlName="gender"
-              placeholder="Enter Gender"
-            >
-          
-          </ion-input>
+          <ion-label>Gender :</ion-label>
+          <ion-select  placeholder="select" formControlName="gender">
+            <section>
+              <ion-select-option [value]="Male">Male</ion-select-option>
+              <ion-select-option [value]="Female">Female</ion-select-option>
+              <ion-select-option [value]="Other">Other</ion-select-option>
+      
+          </section>
+          </ion-select>
         </ion-item>
-        </div>
-  
-    <br>
+      </div>
+      <br>
     <div class="form-group">
       <ion-item>
       <ion-input

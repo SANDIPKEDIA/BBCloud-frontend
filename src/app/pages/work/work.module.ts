@@ -11,6 +11,8 @@ import { WorkPage } from './work.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditWorkPageModel } from "./model/work/add-edit-work.page";
+import {WorkDetailsPage} from "./components/work-details/work-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditWorkPageModel } from "./model/work/add-edit-work.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [WorkPage, AddEditWorkPageModel],
+  declarations: [WorkPage, AddEditWorkPageModel,WorkDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditWorkPageModel]
 })

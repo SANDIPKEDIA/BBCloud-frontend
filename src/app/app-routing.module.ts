@@ -195,6 +195,11 @@ const routes: Routes = [
     path: 'docmgnt',
     loadChildren: () => import('./pages/training-management /training-management.module').then(m => m.TrainingManagementPageModule)
   },
+  {
+    path:'user',
+    loadChildren: () => import('./pages/user/user.module').then( m =>m.UserPageModule)
+  },
+
 
 
 

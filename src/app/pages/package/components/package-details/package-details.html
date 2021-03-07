@@ -1,0 +1,115 @@
+ 
+<ion-content>
+  <section class="header">
+    <div class="top-left">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="employee"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Package Details</ion-title>
+    </div>
+  </section>
+  <!-- <ion-card class="grid-box"> -->
+    
+
+    <!-- <ion-col class="profile-img-box"> -->
+      <!-- <img
+        class="user-img"
+        *ngIf="customerData.CustomerImage.length !== 0"
+        src="{{customerData.CustomerImage}}"
+      /> -->
+
+      <!-- <div
+        *ngIf="true"
+        [ngStyle]="{'opacity' : customerData.isAccountActive == false ? 0.4 : 1}"
+        class="centered"
+      >
+        {{customerData.label}}
+      </div>
+
+      <h6 *ngIf="customerData.name">{{customerData.name }}</h6>
+    </ion-col>
+  </ion-card> -->
+ 
+  <ion-card class="card-box">
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Name</ion-label>
+        <ion-text *ngIf="customerData.name">{{customerData.name}}</ion-text>
+        <ion-text *ngIf="!customerData.name">-</ion-text>
+      </div>
+    </div>
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Price</ion-label>
+        <ion-text *ngIf="customerData.price"
+          >{{customerData.price}}</ion-text
+        >
+        <ion-text *ngIf="!customerData.price"
+        >-</ion-text
+      >
+      </div>
+    </div>
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Details</ion-label>
+        <ion-text *ngIf="customerData.details">{{customerData.details}}</ion-text>
+        <ion-text *ngIf="!customerData.details">-</ion-text>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Tag</ion-label>
+        <ion-text *ngIf="customerData.tags">{{customerData.tags}}</ion-text>
+        <ion-text *ngIf="!customerData.tags">-</ion-text>
+      </div>
+    </div>
+   
+  
+   
+
+
+    <!-- <div class="row">
+      <div class="float-left">
+        <ion-label>DOB</ion-label>
+        <ion-text *ngIf="customerData.dob"
+          >{{customerData.dob | date :'dd MMM yyyy'}}</ion-text
+        >
+        <ion-text *ngIf="!customerData.dob">-</ion-text>
+      </div>
+    </div> -->
+    <!-- <div class="row">
+      <div class="float-left">
+        <ion-label>Register From</ion-label>
+        <ion-text *ngIf="customerData.isSocialLogin"
+          >Social Media</ion-text
+        >
+        <ion-text *ngIf="!customerData.isSocialLogin"
+        >Mobile</ion-text
+      >
+      </div>
+    </div> -->
+
+    <!-- <div class="row">
+      <div class="float-left">
+        <ion-label>Refer Code</ion-label>
+        <ion-text *ngIf="customerData.referCode"
+          >{{customerData.referCode}}</ion-text
+        >
+
+      </div>
+    </div> -->
+
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Registration Date</ion-label>
+        <ion-text *ngIf="customerData.createdAt"
+          >{{customerData.createdAt | date: 'dd MMM yyyy'}}</ion-text
+        >
+
+      </div>
+    </div>
+
+
+  </ion-card>
+</ion-content>

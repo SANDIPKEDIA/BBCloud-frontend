@@ -11,6 +11,9 @@ import { PackagePage } from './package.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditPackagePageModel } from "./model/package/add-edit-package.page";
+import {PackageDetailsPage} from "./components/package-details/package-details";
+
+
 
 
 @NgModule({
@@ -23,7 +26,7 @@ import { AddEditPackagePageModel } from "./model/package/add-edit-package.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [PackagePage, AddEditPackagePageModel],
+  declarations: [PackagePage, AddEditPackagePageModel,PackageDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditPackagePageModel]
 })

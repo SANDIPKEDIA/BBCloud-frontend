@@ -11,6 +11,8 @@ import { PlanPage } from './plan.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditPlanPageModel } from "./model/plan/add-edit-plan.page";
+import {PlanDetailsPage} from "./components/plan-details/plan-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditPlanPageModel } from "./model/plan/add-edit-plan.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [PlanPage, AddEditPlanPageModel],
+  declarations: [PlanPage, AddEditPlanPageModel,PlanDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditPlanPageModel]
 })

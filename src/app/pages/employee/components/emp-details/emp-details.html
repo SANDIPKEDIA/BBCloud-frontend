@@ -8,16 +8,35 @@
       <ion-title>Employee Details</ion-title>
     </div>
   </section>
+   <ion-card class="grid-box"> 
+    
+
+     <ion-col class="profile-img-box">
+       <!-- <img
+        class="user-img"
+        src="{{customerData.CustomerImage}}"
+      />  -->
+
+       <div 
+        *ngIf="true"
+        [ngStyle]="{'opacity' : customerData.isAccountActive == false ? 0.4 : 1}"
+        class="centered"
+      >
+        {{customerData.label}}
+      </div>
+      <h6 *ngIf="customerData.name">{{customerData.name }}</h6>
+    </ion-col>
+  </ion-card> 
 
  
   <ion-card class="card-box">
-    <div class="row">
+    <!-- <div class="row">
       <div class="float-left">
         <ion-label>Employee Name</ion-label>
         <ion-text *ngIf="customerData.name">{{customerData.name}}</ion-text>
         <ion-text *ngIf="!customerData.name">-</ion-text>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="float-left">
         <ion-label>Email Id</ion-label>

@@ -11,7 +11,7 @@ import { OrderPage } from './order.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditOrderPageModel } from "./model/order/add-edit-order.page";
-import { OrderDetailsPage } from '../orders/components/order-details/order-details';
+import { OrdDetailsPage } from '../order/components/order-details/order-details';
 
 
 
@@ -25,7 +25,7 @@ import { OrderDetailsPage } from '../orders/components/order-details/order-detai
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [OrderPage, AddEditOrderPageModel,OrderDetailsPage],
+  declarations: [OrderPage, AddEditOrderPageModel,OrdDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditOrderPageModel]
 })

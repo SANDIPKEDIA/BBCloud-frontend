@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button  style="color: white;"></ion-menu-button>
+      
+        <!-- <ion-icon style="margin-left: 10px;font-size: 22px;"    name="arrow-back-outline"></ion-icon> -->
+      
+    </ion-buttons>
+    <ion-title>
+      User  
+    </ion-title>
+    <ion-buttons slot="end" style="margin-right: 20px;" >
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ <!-- <ion-searchbar #autofocus  *ngIf="showSearchBox"  spellcheck="true" placeholder="Search Customers" [(ngModel)]="searchWord" (ionChange)="search($event)"></ion-searchbar> -->
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+<ion-list>
+  <ion-item-sliding id="item100" *ngFor="let item of list">
+    <ion-item [routerLink]="['/user/user-details/'+ item._id ]">
+       
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <img class="product-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjNUOgjEhHpfUqnVk-Tp2uN1AhrrzXhwdX9A&usqp=CAU">
+            <!-- {{item.label}} -->
+              
+          </ion-col>
+          <ion-col size="9">
+            <h6 class="product-name" *ngIf="item.fullName">{{item.fullName}}</h6>
+            <h6 class="product-name grey-color" *ngIf="!item.fullName">N/A</h6>
+            <span class="tag-name">{{item.email}}</span>
+          </ion-col>
+          <!-- <ion-col size="1">
+            <ion-icon class="call-icon" name="call-outline"></ion-icon>
+          </ion-col> -->
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <p *ngIf="list.length == 0" class="noRecordsFound">No Records Found</p>
+
+    <ion-item-options side="end">
+      <ion-item-option color="warning" (click)="openEditUserModal(item)">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-item-option>
+      <ion-item-option color="danger" (click)="presentAlertConfirm(item._id)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+      <!-- <ion-item-option  color="primary" (click)="openEditCustomerModal(item)">
+        <span >Edit</span>
+      </ion-item-option>
+      <ion-item-option   color="danger" (click)="presentAlertConfirm(item._id,item.isAccountActive)">
+        <span >Delete</span>
+      </ion-item-option> -->
+
+    </ion-item-options>
+
+  </ion-item-sliding>
+</ion-list>
+
+
+
+
+ 
+ 
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="openAddUserModal()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

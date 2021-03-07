@@ -11,6 +11,8 @@ import { VacancyPage } from './vacancy.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditVacancyPageModel } from "./model/vacancy/add-edit-vacancy.page";
+import {VacancyDetailsPage} from "./components/vacancy-details/vacancy-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditVacancyPageModel } from "./model/vacancy/add-edit-vacancy.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [VacancyPage, AddEditVacancyPageModel],
+  declarations: [VacancyPage, AddEditVacancyPageModel,VacancyDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditVacancyPageModel]
 })

@@ -11,6 +11,8 @@ import { TrainingPage } from './training.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditTrainingPageModel } from "./model/training/add-edit-training.page";
+import {TrainingDetailsPage} from "./components/training-details/training-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditTrainingPageModel } from "./model/training/add-edit-training.pag
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [TrainingPage, AddEditTrainingPageModel],
+  declarations: [TrainingPage, AddEditTrainingPageModel,TrainingDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditTrainingPageModel]
 })

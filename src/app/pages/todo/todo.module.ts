@@ -11,6 +11,8 @@ import { TodoPage } from './todo.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditTodoPageModel } from "./model/todo/add-edit-todo.page";
+import {TodoDetailsPage} from "./components/todo-details/todo-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditTodoPageModel } from "./model/todo/add-edit-todo.page";
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [TodoPage, AddEditTodoPageModel],
+  declarations: [TodoPage, AddEditTodoPageModel,TodoDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditTodoPageModel]
 })

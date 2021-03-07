@@ -11,6 +11,8 @@ import { PrototypePage } from './prototype.page';
 import { AccountService } from '../../providers/account.service';
 import { FinanceService } from '../../providers/finance.service';
 import { AddEditPrototypePageModel } from "./model/prototype/add-edit-prototype.page";
+import {PrototypeDetailsPage} from "./components/prototype-details/prototype-details";
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { AddEditPrototypePageModel } from "./model/prototype/add-edit-prototype.
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  declarations: [PrototypePage, AddEditPrototypePageModel],
+  declarations: [PrototypePage, AddEditPrototypePageModel,PrototypeDetailsPage],
   providers:[AccountService, FinanceService],
   entryComponents:[AddEditPrototypePageModel]
 })

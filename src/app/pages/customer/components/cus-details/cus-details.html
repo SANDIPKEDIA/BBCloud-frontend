@@ -8,16 +8,34 @@
       <ion-title>Customer Details</ion-title>
     </div>
   </section>
-  
+  <ion-card class="grid-box"> 
+    
+
+    <ion-col class="profile-img-box">
+      <!-- <img
+       class="user-img"
+       src="{{customerData.CustomerImage}}"
+     />  -->
+
+      <div 
+       *ngIf="true"
+       [ngStyle]="{'opacity' : customerData.isAccountActive == false ? 0.4 : 1}"
+       class="centered"
+     >
+       {{customerData.label}}
+     </div>
+     <h6 *ngIf="customerData.name">{{customerData.name }}</h6>
+   </ion-col>
+ </ion-card> 
  
   <ion-card class="card-box">
-    <div class="row">
+    <!-- <div class="row">
       <div class="float-left">
         <ion-label>Customer Name</ion-label>
         <ion-text *ngIf="customerData.name">{{customerData.name}}</ion-text>
         <ion-text *ngIf="!customerData.name">-</ion-text>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="float-left">
         <ion-label>Email Id</ion-label>
@@ -43,27 +61,34 @@
         <ion-text *ngIf="!customerData.age">-</ion-text>
       </div>
     </div>
+    <div class="row">
+      <div class="float-left">
+        <ion-label>Gender</ion-label>
+        <ion-text *ngIf="customerData.gender">{{customerData.gender}}</ion-text>
+        <ion-text *ngIf="!customerData.gender">{{customerData.gender}}</ion-text>
+      </div>
+    </div>
 
     <div class="row">
       <div class="float-left">
         <ion-label>Address</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.address}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">{{customerData.address}}</ion-text>
+        <ion-text *ngIf="customerData.address">{{customerData.address}}</ion-text>
+        <ion-text *ngIf="!customerData.address">{{customerData.address}}</ion-text>
       </div>
     </div>
     <div class="row">
       <div class="float-left">
         <ion-label>Store Name</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.store_name}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">{{customerData.store_name}}</ion-text>
+        <ion-text *ngIf="customerData.store_name">{{customerData.store_name}}</ion-text>
+        <ion-text *ngIf="!customerData.store_name">{{customerData.store_name}}</ion-text>
       </div>
     </div>
     
     <div class="row">
       <div class="float-left">
         <ion-label>Package Name</ion-label>
-        <ion-text *ngIf="customerData.gender">{{customerData.package}}</ion-text>
-        <ion-text *ngIf="!customerData.gender">{{customerData.package}}</ion-text>
+        <ion-text *ngIf="customerData.package">{{customerData.package}}</ion-text>
+        <ion-text *ngIf="!customerData.package">{{customerData.package}}</ion-text>
       </div>
     </div>
 

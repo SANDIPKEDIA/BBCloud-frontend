@@ -39,6 +39,8 @@ export class AddEditCustomerPageModel implements OnInit {
       store_name: new FormControl(''),
       package: new FormControl(''),
       email: new FormControl(''),
+      gender: new FormControl(''),
+
     });
 
     
